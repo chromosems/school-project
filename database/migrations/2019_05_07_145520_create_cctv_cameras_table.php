@@ -15,6 +15,13 @@ class CreateCctvCamerasTable extends Migration
     {
         Schema::create('cctv_cameras', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('date');
+            $table->string('company_name');
+            $table->string('location');
+            $table->string('cameras');
+            $table->string('phone_number');
+            $table->string('email');
+            $table->text('bio' );
             $table->timestamps();
         });
     }

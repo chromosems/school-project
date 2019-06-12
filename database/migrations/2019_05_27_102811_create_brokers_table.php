@@ -15,6 +15,14 @@ class CreateBrokersTable extends Migration
     {
         Schema::create('brokers', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->date('date');
+            $table->string('brokers_name');
+            $table->string('contact');
+            $table->string('location');
+            $table->string('address');
+            $table->string('district');
+            $table->string('price');
+            $table->text('description');
             $table->timestamps();
         });
     }

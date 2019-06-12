@@ -10,11 +10,21 @@
     <link href="/css/styles.css" rel="stylesheet">
 
     <!--Custom Font-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+
+          <!--Sweet alert files-->
+    <script src="{{asset('js/sweetalert-dev.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/sweetalert.css')}}">
+
+
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+
+   
 </head>
 <body>
 @include('layouts.top_menu')
@@ -26,8 +36,9 @@
         <div class="col-lg-12">
             @yield('content')
             <div class="col-sm-12">
-                <p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
+                <p class="back-link">comlink@info <a href="#">Comlink@info</a></p>
             </div>
         </div><!-- /.row -->
     </div><!--/.main-->
+</div>
 @include('layouts.footer')

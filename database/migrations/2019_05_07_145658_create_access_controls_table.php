@@ -15,6 +15,13 @@ class CreateAccessControlsTable extends Migration
     {
         Schema::create('access_controls', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->date('date');
+            $table->string('company_name');
+            $table->string('access_control');
+            $table->string('location');
+            $table->string('phone_number');
+            $table->string('email');
+            $table->text('bio');
             $table->timestamps();
         });
     }

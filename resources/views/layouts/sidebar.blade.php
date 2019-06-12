@@ -10,9 +10,10 @@
         <div class="clear"></div>
     </div>
     <div class="divider"></div>
-    <form role="search">
+    <form action="/search" method="POST" role="search">
+        @csrf
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" placeholder="Search Fire Alarms Type " name="search">
         </div>
     </form>
     <ul class="nav menu">
@@ -32,7 +33,12 @@
             </ul>
         </li>
         <li><a href="/dashboard"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-        <li><a href="/item"><em class="fa fa-calendar">&nbsp;</em> Items</a></li>
+        <li><a href="/customer"><em class="fa fa-calendar">&nbsp;</em>Customers </a></li>
+        <li><a href="/cctv_cameras"><em class="fa fa-calendar">&nbsp;</em>CCTV camera</a></li>
+        <li><a href="/access_controls"><em class="fa fa-calendar">&nbsp;</em>Access Control</a></li>
+        <li><a href="/fire_alarms"><em class="fa fa-calendar">&nbsp;</em>Fire Alarm</a></li>
+        <li><a href="/brokers"><em class="fa fa-calendar">&nbsp;</em>House Renting</a></li>
+        <li><a href="/technician"><em class="fa fa-calendar">&nbsp;</em>Technicians</a></li>
 
         <li><a href="/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
     </ul>

@@ -14,8 +14,19 @@ class CreateFireAlarmsTable extends Migration
     public function up()
     {
         Schema::create('fire__alarms', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->BigIncrements('id');
+//            $table->unsignedBigInteger('customers_id')->index();
+            $table->string('company_name');
+            $table->string('location');
+            $table->string('fire_alarm_type');
+            $table->string('email');
+            $table->string('phone_number');
+            $table->dateTime('date');
+            $table->text('bio');
             $table->timestamps();
+//            $table->foreign('customers_id')->references('id')->on('customers')->onDelete('cascade');
+
+
         });
     }
 
