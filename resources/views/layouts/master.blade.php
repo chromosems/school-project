@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ComLink</title>
+    <title>SecurityLink</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/datepicker3.css" rel="stylesheet">
@@ -36,7 +36,7 @@
         <div class="col-lg-12">
             @yield('content')
             <div class="col-sm-12">
-                <p class="back-link">comlink@info <a href="#">Comlink@info</a></p>
+                <p class="back-link">comlink@info <a href="#">Securitylink@info</a></p>
             </div>
         </div><!-- /.row -->
     </div><!--/.main-->

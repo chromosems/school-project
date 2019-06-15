@@ -24,6 +24,7 @@
                     @endif
 
                     <div class="row">
+
                         <div class="col-sm-12 text-right">
                             <a href="{{route('customer.index')}}" style="height: 50px;width: 200px;" class="btn btn-info
                         text-right "

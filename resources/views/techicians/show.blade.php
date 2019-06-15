@@ -13,6 +13,7 @@
         <div class="panel-heading">{{$techicians->first_name}}</div>
         <div class="col-md-12">
             <div class="row">
+
                 <div class="col-sm-12 text-right">
                     <a href="{{route('technician.index')}}" style="height: 50px;width: 200px;" class="btn
                         btn-success
