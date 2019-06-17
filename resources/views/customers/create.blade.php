@@ -74,10 +74,7 @@
 
                             </div>
 
-
                             <div class="col-sm-6">
-
-
                                 <div class="form-group has-success">
                                     <label>Select Service</label>
                                     <select class="form-control" name="service">

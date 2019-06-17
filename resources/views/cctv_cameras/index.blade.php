@@ -36,13 +36,19 @@
 
                 @foreach ( $cctv_cameras as $cctv_camera)
 
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="panel panel-success">
-                            <a href="{{action('CctvCameraController@show',$cctv_camera->id)}}"><div
+                            <a href="{{action('CctvCameraController@show',$cctv_camera->id)}}">
+                                <div
                                     class="panel-heading"><h3>{{$cctv_camera->company_name}}</h3></div
-                                ></a>
+                                >
+                            </a>
                             <div class="panel-body">
-                                <h4><b>Company Bio:</b>  {{$cctv_camera->bio}}</h4>
+                                <div class="col-sm-2">
+                                    <img src="{{URL::to('/')}}/images/{{$cctv_camera->image}}" class="img-thumbnail"
+                                         width="100px"></div>
+                                <div class="col-sm-10">
+                                    <h4><b>Company Bio:</b> {{$cctv_camera->bio}}</h4></div>
 
                             </div>
                         </div>
@@ -56,3 +62,7 @@
     </div>
 
 @endsection
+
+
+
+

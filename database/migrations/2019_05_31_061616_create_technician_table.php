@@ -19,7 +19,7 @@ class CreateTechnicianTable extends Migration
             $table->text('image');
             $table->date('date');
             $table->string('last_name');
-            $table->string('company_name');
+            $table->integer('company_id');
             $table->string('position');
             $table->string('phone_number');
             $table->string('job_type');

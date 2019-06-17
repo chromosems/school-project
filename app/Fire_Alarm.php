@@ -15,6 +15,7 @@ class Fire_Alarm extends Model
             'fire_alarm_type',
             'email',
             'phone_number',
+            'image',
             'bio',
 
         ];

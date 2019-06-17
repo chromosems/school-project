@@ -17,28 +17,31 @@
         </div>
     </form>
     <ul class="nav menu">
-        <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
-                <em class="fa fa-navicon">&nbsp;</em> Configurations <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
-            </a>
-            <ul class="children collapse" id="sub-item-1">
-                <li><a class="" href="#">
-                        <span class="fa fa-arrow-right">&nbsp;</span> Staff
-                    </a></li>
-                <li><a class="" href="#">
-                        <span class="fa fa-arrow-right">&nbsp;</span> Users
-                    </a></li>
-                <li><a class="" href="#">
-                        <span class="fa fa-arrow-right">&nbsp;</span> Accounts
-                    </a></li>
-            </ul>
-        </li>
+        {{--<li class="parent "><a data-toggle="collapse" href="#sub-item-1">--}}
+                {{--<em class="fa fa-navicon">&nbsp;</em> Configurations <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>--}}
+            {{--</a>--}}
+            {{--<ul class="children collapse" id="sub-item-1">--}}
+                {{--<li><a class="" href="#">--}}
+                        {{--<span class="fa fa-arrow-right">&nbsp;</span> Staff--}}
+                    {{--</a></li>--}}
+                {{--<li><a class="" href="#">--}}
+                        {{--<span class="fa fa-arrow-right">&nbsp;</span> Users--}}
+                    {{--</a></li>--}}
+                {{--<li><a class="" href="#">--}}
+                        {{--<span class="fa fa-arrow-right">&nbsp;</span> Accounts--}}
+                    {{--</a></li>--}}
+            {{--</ul>--}}
+        {{--</li>--}}
         <li><a href="/dashboard"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+        @foreach($services as $service)
+            <li><a href="/services/{{ $service->id }}"><em class="fa fa-server"></em>    {{ $service->name }}</a></li>
+        @endforeach
         <li><a href="/customer"><em class="fa fa-calendar">&nbsp;</em>Customers </a></li>
-        <li><a href="/cctv_cameras"><em class="fa fa-calendar">&nbsp;</em>CCTV camera</a></li>
-        <li><a href="/access_controls"><em class="fa fa-calendar">&nbsp;</em>Access Control</a></li>
-        <li><a href="/fire_alarms"><em class="fa fa-calendar">&nbsp;</em>Fire Alarm</a></li>
-        <li><a href="/brokers"><em class="fa fa-calendar">&nbsp;</em>House Renting</a></li>
+        {{--<li><a href="/cctv_cameras"><em class="fa fa-calendar">&nbsp;</em></a></li>--}}
+        {{--<li><a href="/access_controls"><em class="fa fa-calendar">&nbsp;</em>Access Control</a></li>--}}
+        {{--<li><a href="/fire_alarms"><em class="fa fa-calendar">&nbsp;</em>Fire Alarm</a></li>--}}
         <li><a href="/technician"><em class="fa fa-calendar">&nbsp;</em>Technicians</a></li>
+
 
         <li><a href="/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
     </ul>

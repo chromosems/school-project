@@ -85,8 +85,7 @@
 
                                 <div class="form-group has-success">
                                     <label>Job Type</label>
-                                    <textarea type="text" name="job_type" id="job_type" class="form-control"
-                                              rows="5" cols="5" ;></textarea>
+                                    <input type="text" class="form-control" name="job_type">
                                 </div>
 
 

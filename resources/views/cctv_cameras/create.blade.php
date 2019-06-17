@@ -102,6 +102,12 @@
                                   class="form-control"
                                   rows="10" cols="30";></textarea>
                     </div>
+                    <div class="form-group has-success d-flex flex-column">
+                        <label class="col-sm-6 text-right">Select Profile Image</label>
+                        <input type="file" name="image" class="py-3">
+                    </div>
+
+
                     <button type="submit" class="btn btn-primary">Submit</button>
 
                 </form><!-- form close --->

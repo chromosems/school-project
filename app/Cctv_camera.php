@@ -15,6 +15,7 @@ class Cctv_camera extends Model
             'cameras',
             'phone_number',
             'email',
+            'image',
             'bio',
         ];
 }

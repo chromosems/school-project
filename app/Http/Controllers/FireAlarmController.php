@@ -44,16 +44,33 @@ class FireAlarmController extends Controller
             'email'=>'required',
             'phone_number'=>'required',
             'date'=>'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'bio' =>'required',
         ]);
-        $fire_alarms = new Fire_Alarm($request->all());
-        $fire_alarms->save();
-        return redirect('fire_alarms/create')->with('success','A fire Alarm Company has beeen registered');
+
+        $image = $request->file('image');
+        $imageName = time() . '.' . $request->image->getClientOriginalName();
+        $request->image->move(public_path('images'), $imageName);
+
+        $form_data = array(
+
+            'company_name' => $request->company_name,
+            'location' => $request->location,
+            'fire_alarm_type'=>$request->fire_alarm_type,
+            'email'=>$request->email,
+            'phone_number'=>$request->phone_number,
+            'date'=>$request->date,
+            'image'=>$imageName,
+            'bio'=>$request->bio,
+        );
+        Fire_Alarm::create($form_data);
+        return redirect('fire_alarms/create')->with('success','A fire Alarm Company has been registered');
+
     }
 
 
     /**
-     * Display the specified resource.
+     * Display the specified resourceN
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -102,4 +119,6 @@ class FireAlarmController extends Controller
     {
         //
     }
+
+    
 }

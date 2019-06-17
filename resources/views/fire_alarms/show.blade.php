@@ -23,17 +23,22 @@
                 </div>
             </div>
 
-          <div class="container">
+          {{--<div class="container">--}}
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-success">
                         <div class="panel-heading"><h2><b>Company Name:</b>{{$fire_alarms->company_name}}</h2></div>
                         <div class="panel-body">
+                            <div class="col-sm-3">
+                            <img src="{{URL::to('/')}}/images/{{$fire_alarms->image}}" class="img-thumbnail"
+                                 width="200px"></div>
+                            <div class="col-sm-3">
                             <h4><b>Location: </b>{{$fire_alarms->location}}</h4>
                             <h4><b>Fire alarm type: </b>{{$fire_alarms->fire_alarm_type}}</h4>
                             <h4><b>Email: </b>{{$fire_alarms->email}}</h4>
-                            <h4><b>Phone number: </b>{{$fire_alarms->phone_number}}</h4>
-                            <h4><b>Company Bio: </b>{{$fire_alarms->bio}}</h4>
+                            <h4><b>Phone number: </b>{{$fire_alarms->phone_number}}</h4></div>
+                            <div class="col-sm-6">
+                                <h4><b>Company Bio: </b>{{$fire_alarms->bio}}</h4></div>
 
 
                         </div>
@@ -46,7 +51,7 @@
     </div>
 
 
-    </div>
+    {{--</div>--}}
 
 @endsection
 

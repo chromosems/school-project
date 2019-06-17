@@ -72,7 +72,7 @@
                                 <label>Fire alarm type</label>
                                 <select name="fire_alarm_type" class="form-control">
                                     <option value="Conventional Fire Alarms">Conventional fire alarms</option>
-                                    <option value="Addresible">Addressible</option>
+                                    <option value="Accessible">Accessible</option>
 
                                 </select>
                             </div>
@@ -99,8 +99,14 @@
                         <label>Company Bio</label>
                         <textarea type="text" name="bio" id="bio"
                                   class="form-control"
-                                  rows="10" cols="30";></textarea>
+                                  rows="10" cols="30" ;></textarea>
                     </div>
+
+                    <div class="form-group has-success d-flex flex-column">
+                        <label class="col-sm-6 text-right">Select Profile Image</label>
+                        <input type="file" name="image" class="py-3">
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Submit</button>
 
                 </form><!-- form close --->

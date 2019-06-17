@@ -71,8 +71,8 @@
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLongTitle">Edit
-                                                        Customer Details for: {{$customer->first_name}}</h5>
+                                                    <h3 class="modal-title" id="exampleModalLongTitle">Edit
+                                                        Customer Details for: {{$customer->first_name}}</h3>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
@@ -80,10 +80,10 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="card-body">
-                                                        <form action="{{route('customer.update','$id')}}"
+                                                        <form action="{{route('customer.update',$customer->id)}}"
                                                               method="POST">
-                                                            @csrf
                                                             @method('PUT')
+                                                            @csrf
                                                             <div class="row">
                                                                 <div class="col-sm-6">
                                                                     <div class="form-group has-success">
@@ -141,18 +141,9 @@
 
                                                                     <div class="form-group has-success">
                                                                         <label>Select Service</label>
-                                                                        <select class="form-control" name="service"
-                                                                                value="{{$customer->service}}">
-                                                                            <option value="select">select</option>
-                                                                            <option value="Fire alarm">fire alarm
-                                                                            </option>
-                                                                            <option value="CCTV camera">cctv camera
-                                                                            </option>
-                                                                            <option value="Access control">access
-                                                                                control
-                                                                            </option>
-                                                                            <option value="Broker">House To Rent
-                                                                            </option>
+                                                                        <select class="form-control" name="service">
+                                                                            <option
+                                                                                value="{{$customer->id}}">{{$customer->service}}</option>
                                                                         </select>
                                                                     </div>
 
@@ -161,10 +152,9 @@
                                                                         <label>Problem Description</label>
                                                                         <textarea type="text"
                                                                                   name="problem_description"
-                                                                                  value="{{$customer->problem_description}}"
                                                                                   class="form-control"
-                                                                                  rows="20" cols="30" ;>
-
+                                                                                  rows="20" cols="30" ;
+                                                                        >{{$customer->problem_description}}
                                                                         </textarea>
                                                                     </div>
                                                                 </div>

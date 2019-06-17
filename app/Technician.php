@@ -17,4 +17,9 @@ class Technician extends Model
         'phone_number',
         'date',
     ];
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class-);
+    }
 }

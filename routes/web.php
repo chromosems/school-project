@@ -28,7 +28,6 @@ Route::resource('/brokers', 'BrokersController');
 Route::resource('/access_controls', 'AccessControlsController');
 Route::resource('/technician','TechicianController');
 
-
 /*Fire Alarm search*/
 Route::any('/search', function () {
     $search = Input::get('search');
