@@ -1,4 +1,5 @@
 <?php
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -7,14 +8,18 @@ class Service extends Model
 {
     protected $fillable = [];
 
-    public function companies() {
+    public function companies()
+    {
         return $this->belongsToMany(Company::class);
     }
 
-    public function technician () {
+    public function technician()
+    {
         return $this->belongsTo(Technician::class);
     }
 
-
-
+    public function customers()
+    {
+        return $this->hasMany(Customer::class);
+    }
 }

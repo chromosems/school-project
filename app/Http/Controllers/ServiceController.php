@@ -48,9 +48,8 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-        //
-        $services = Service::find( 1);
-        return view('services.show', compact($services));
+        $service = Service::find($id)->load('customers');
+        return view('services.show', compact('service'));
     }
 
     /**
