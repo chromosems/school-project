@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Input;
 |
 */
 
-//Route::get('/', function () {
-//    return view('customers.index');
-//});
+Route::get('/test', function () {
+    return view('layouts.layout');
+});
 
 Auth::routes();
 
@@ -25,12 +25,13 @@ Route::group(
         Route::get('/', 'HomeController@index')->name('home');
         Route::get('/dashboard', 'HomeController@index')->name('home');
 
-        Route::resource('/customer', 'CustomerController');
+        Route::resource('/customers', 'CustomerController');
+        Route::resource('/technicians', 'TechicianController');
+
         Route::resource('/fire_alarms', 'FireAlarmController');
         Route::resource('/cctv_cameras', 'CctvCameraController');
         Route::resource('/brokers', 'BrokersController');
         Route::resource('/access_controls', 'AccessControlsController');
-        Route::resource('/technician', 'TechicianController');
         Route::resource('/services', 'ServiceController');
 
         /*Fire Alarm search*/
