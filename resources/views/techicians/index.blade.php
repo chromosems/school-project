@@ -44,8 +44,8 @@
 
                             <div class="panel-body">
                                 <h4><b></b><img src="{{URL::to('/')}}/images/{{$techician->image}}" class="thumbnail"
-                                                width="350px"></h4>
-                           <h3>Company Name</h3>: {{$techician->company_name}}
+                                                height="300px" width="350px"></h4>
+                                <h3>Company Name</h3>: {{$techician->company_name}}
                             </div>
                         </div>
                     </div>

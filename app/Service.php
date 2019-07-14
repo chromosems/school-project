@@ -7,11 +7,14 @@ class Service extends Model
 {
     protected $fillable = [];
 
-    public function company() {
-        return $this->belongsTo();
+    public function companies() {
+        return $this->belongsToMany(Company::class);
     }
 
     public function technician () {
-        return $this->belongsTo();
+        return $this->belongsTo(Technician::class);
     }
+
+
+
 }

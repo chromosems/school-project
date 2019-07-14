@@ -38,11 +38,13 @@
 
                     <div class="col-md-12">
                         <div class="panel panel-success">
-                            <a href="{{action('AccessControlsController@show',$access_control->id)}}"><div
+                            <a href="{{action('AccessControlsController@show',$access_control->id)}}">
+                                <div
                                     class="panel-heading"><h3>{{$access_control->company_name}}</h3></div
-                                ></a>
+                                >
+                            </a>
                             <div class="panel-body">
-                                <h4><b>Company Bio:</b>  {{$access_control->bio}}</h4>
+                                <h4><b>Company Bio:</b> {{$access_control->bio}}</h4>
 
                             </div>
                         </div>

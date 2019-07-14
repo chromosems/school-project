@@ -16,7 +16,7 @@ class CompanyTableSeeder extends Seeder
 
         $companies = [
             [
-                'name' => 'walaw technical systems',
+                'name' => 'wallah technical systems',
                 'bio' => 'wew are extra ordinary, lets try our ability today and you see',
             ],
 
@@ -26,7 +26,7 @@ class CompanyTableSeeder extends Seeder
             ],
             [
                 'name' => 'kibs systems limited',
-                'bio' => 'very high potensial we gat here'
+                'bio' => 'very high potential we gat here'
             ]
 
         ];

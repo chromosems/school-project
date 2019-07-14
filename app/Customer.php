@@ -17,4 +17,5 @@ class Customer extends Model
         'service',
         'phone_number'
     ];
+
 }

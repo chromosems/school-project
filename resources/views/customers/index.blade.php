@@ -12,18 +12,20 @@
     <div class="panel panel-default">
         <div class="panel-heading">Customers:All</div>
         <div class="col-md-12">
+            <br>
             <div class="row">
                 <div class="col-sm-12 text-right">
-                    <a href="{{route('customer.create')}}" style="height: 50px;width: 200px;" class="btn
-                        btn-success
+                    <a href="{{route('customer.create')}}" class="btn
+                        btn-primary
                         text-right "
                        type="button"><i
                             class="fa
-                        fa-plus"></i>
+                        fa-plus-circle"></i>
                         Register Complain
                     </a>
                 </div>
             </div>
+            <br>
             <div class="box-body">
                 <table id="example2" class="table table-bordered table-hover">
                     <thead>
@@ -54,7 +56,7 @@
                             <td>
                                 <div class="btn-group">
                                     <a href="{{action('CustomerController@show',$customer->id)}}">
-                                        <button type="button" class="btn btn-info" data-toggle="modal"
+                                        <button type="button" class="btn btn-block" data-toggle="modal"
                                                 data-target="#edit-modal">
                                             <i class="fa fa-book">
                                             </i>
@@ -62,12 +64,21 @@
                                     </a>
 
                                 </div>
+                                <a href="{{route('customer.edit',$customer->id)}}">
+                                    <button type="button" class="btn btn-info"><i class="fa fa-pencil"></i></button>
+                                </a>
+
+                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+
+
                             </td>
 
-
-                @endforeach
-
+                            @endforeach
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <center> <?php echo $customers->render();?></center>
+    </div>
 @endsection

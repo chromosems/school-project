@@ -36,7 +36,7 @@
         <div class="col-lg-12">
             @yield('content')
             <div class="col-sm-12">
-                <p class="back-link">comlink@info <a href="#">Securitylink@info</a></p>
+                {{--<p class="back-link">comlink@info <a href="#">Securitylink@info</a></p>--}}
             </div>
         </div><!-- /.row -->
     </div><!--/.main-->

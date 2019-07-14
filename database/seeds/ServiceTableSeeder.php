@@ -25,10 +25,7 @@ class ServiceTableSeeder extends Seeder
                 'name' => 'Fire Alarm',
                 'bio' => 'very high potensial we gat here',
             ],
-            [
-                'name' => 'Rent A house',
-                'bio' => 'We have the best houses at the best friendly prices just for your comfort'
-            ]
+
 
         ];
 

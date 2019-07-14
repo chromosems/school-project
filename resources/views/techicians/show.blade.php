@@ -34,8 +34,9 @@
                             </center>
                             <div class="panel-body">
                                 <center>
+
                                     <img src="{{URL::to('/')}}/images/{{$techicians->image}}" class="img-thumbnail"
-                                         width="400px"></center>
+                                         width="250px"></center>
                                 <br>
                                 <br>
                                 <br>

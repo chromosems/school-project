@@ -1,12 +1,11 @@
 <?php
-
 namespace App;
-
 
 use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
+    //
     protected $fillable = [];
 
     public function services()
@@ -15,9 +14,9 @@ class Company extends Model
     }
 
 
-
     public function technicians()
     {
         return $this->hasMany(Technician::class);
     }
+
 }

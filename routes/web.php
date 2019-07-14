@@ -26,7 +26,8 @@ Route::resource('/fire_alarms', 'FireAlarmController');
 Route::resource('/cctv_cameras', 'CctvCameraController');
 Route::resource('/brokers', 'BrokersController');
 Route::resource('/access_controls', 'AccessControlsController');
-Route::resource('/technician','TechicianController');
+Route::resource('/technician', 'TechicianController');
+Route::resource('/services', 'ServiceController');
 
 /*Fire Alarm search*/
 Route::any('/search', function () {
@@ -76,4 +77,8 @@ Route::any('/broker', function () {
     else
         return view('brokers.search')->withMessage('no Details found. try a gain later !');
 });
-      
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
