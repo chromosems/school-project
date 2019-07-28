@@ -15,8 +15,6 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('service_id')->unsigned();
-
             $table->date('date');
             $table->string('first_name');
             $table->string('last_name');
@@ -24,10 +22,7 @@ class CreateCustomersTable extends Migration
             $table->string('location');
             $table->text('problem_description');
             $table->string('phone_number');
-
             $table->timestamps();
-
-            $table->foreign('service_id')->references('id')->on('services');
         });
     }
 

@@ -4,8 +4,6 @@
 
     <div class="row">
 
-
-
         <div class="col-sm-12">
             {{--  leader board and HUD ---}}
             <div class="row">

@@ -22,7 +22,7 @@
                     </div>
                 </form>
                 <div class="col-sm-12 text-right">
-                    <a href="{{route('technician.create')}}" style="height: 50px;width: 200px;" class="btn
+                    <a href="{{route('technicians.create')}}" style="height: 50px;width: 200px;" class="btn
                         btn-success
                         text-right "
                        type="button"><i

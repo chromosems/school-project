@@ -14,8 +14,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-//        $services = Service::latest()->paginate(6);
-//        return view('services.index', compact($services));
+       $services = Service::latest()->paginate(6);
     }
 
     /**
@@ -25,7 +24,6 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
         return view('services.create');
     }
 

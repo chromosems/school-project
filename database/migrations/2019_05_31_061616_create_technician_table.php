@@ -15,15 +15,17 @@ class CreateTechnicianTable extends Migration
     {
         Schema::create('technicians', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('company_id');
+
             $table->string('first_name');
-            $table->text('image');
-            $table->date('date');
             $table->string('last_name');
-            $table->string('company_id');
-            $table->string('position');
             $table->string('phone_number');
             $table->string('job_type');
+            $table->string('position');
+            $table->text('image');
             $table->timestamps();
+
+            $table->foreign('company_id')->references('id')->on('companies');
         });
     }
 

@@ -31,7 +31,7 @@
 
                     <div class="row">
                         <div class="col-sm-12 text-right">
-                            <a href="{{route('technician.index')}}" style="height: 50px;width: 200px;" class="btn
+                            <a href="{{route('technicians.index')}}" style="height: 50px;width: 200px;" class="btn
                             btn-info
                         text-right "
                                type="button">
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <br>
-                    <form action="{{route('technician.store')}}" method="post" enctype="multipart/form-data"><!-- form
+                    <form action="{{route('technicians.store')}}" method="post" enctype="multipart/form-data"><!-- form
                     begins here -->
                         @csrf
                         <div class="row">

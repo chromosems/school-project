@@ -15,8 +15,11 @@ class CreateCompanyServiceTable extends Migration
     {
         Schema::create('company_service', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('service_id');
-            $table->integer('company_id');
+            $table->bigInteger('service_id')->unsigned();
+            $table->bigInteger('company_id')->unsigned();
+
+            $table->foreign('service_id')->references('id')->on('services');
+            $table->foreign('company_id')->references('id')->on('companies');
         });
     }
 
