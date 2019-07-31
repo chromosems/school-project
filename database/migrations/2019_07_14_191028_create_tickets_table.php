@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCompanyServiceTable extends Migration
+class CreateTicketsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,18 @@ class CreateCompanyServiceTable extends Migration
      */
     public function up()
     {
-        Schema::create('company_service', function (Blueprint $table) {
+        Schema::create('tickets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('service_id')->unsigned();
-            $table->bigInteger('company_id')->unsigned();
+
+            $table->string('title');
+            $table->text('image')->nullable();
+            $table->string('location');
+            $table->text('description');
+
+            $table->timestamps();
 
             $table->foreign('service_id')->references('id')->on('services');
-            $table->foreign('company_id')->references('id')->on('companies');
         });
     }
 
@@ -30,6 +35,6 @@ class CreateCompanyServiceTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('company_service');
+        Schema::dropIfExists('tickets');
     }
 }

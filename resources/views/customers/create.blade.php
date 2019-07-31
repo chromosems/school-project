@@ -83,12 +83,11 @@
                             <div class="col-sm-6">
                                 <div class="form-group has-success">
                                     <label>Select Service</label>
-                                    <select class="form-control" name="service">
-                                        <option value="select(default)">select</option>
-                                        <option value="Fire alarm">fire alarm</option>
-                                        <option value="CCTV camera">cctv camera</option>
-                                        <option value="Access control">access control</option>
-                                        <option value="Broker">House To Rent</option>
+                                    <select class="form-control" name="service" required>
+                                        <option value="">--Select Service--</option>
+                                        @foreach($services as $service)
+                                            <option value="{{ $service->id }}">{{ $service->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
 

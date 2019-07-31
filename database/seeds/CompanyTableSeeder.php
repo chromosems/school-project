@@ -1,5 +1,6 @@
 <?php
 
+use App\Company;
 use Illuminate\Database\Seeder;
 
 class CompanyTableSeeder extends Seeder
@@ -11,9 +12,6 @@ class CompanyTableSeeder extends Seeder
      */
     public function run()
     {
-        //
-
-
         $companies = [
             [
                 'name' => 'wallah technical systems',
@@ -32,8 +30,7 @@ class CompanyTableSeeder extends Seeder
         ];
 
         foreach ($companies as $company) {
-            \App\Company::create($company);
+            Company::create($company);
         }
     }
 }
-
