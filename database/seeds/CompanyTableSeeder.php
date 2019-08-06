@@ -14,19 +14,17 @@ class CompanyTableSeeder extends Seeder
     {
         $companies = [
             [
-                'name' => 'wallah technical systems',
+                'name' => 'Wallah Technical Systems',
                 'bio' => 'wew are extra ordinary, lets try our ability today and you see',
             ],
-
             [
                 'name' => 'Ensibuuko',
                 'bio' => 'Lalalalalala'
             ],
             [
-                'name' => 'kibs systems limited',
+                'name' => 'Kibs Systems Limited',
                 'bio' => 'very high potential we gat here'
             ]
-
         ];
 
         foreach ($companies as $company) {

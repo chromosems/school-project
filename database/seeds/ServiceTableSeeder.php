@@ -15,6 +15,5 @@ class ServiceTableSeeder extends Seeder
         foreach (SERVICES as $service) {
             Service::create($service);
         }
-
     }
 }
