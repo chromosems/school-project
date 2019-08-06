@@ -7,10 +7,14 @@
 @endsection
 
 
-@section('content')
+@section('content')\
 
-    <div class="panel panel-default">
-        <div class="panel-heading">CCTV CAMERAS:All</div>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h3 class="h2">Cctv cameras</h3>
+    </div>
+
+    <div class="card">
+        <div class="card-header">CCTV CAMERAS:All</div>
 
         <div class="col-md-12">
             <br>
@@ -40,10 +44,10 @@
                         <div class="panel panel-success">
                             <a href="{{action('CctvCameraController@show',$cctv_camera->id)}}">
                                 <div
-                                    class="panel-heading"><h3>{{$cctv_camera->company_name}}</h3></div
+                                    class="card-header"><h3>{{$cctv_camera->company_name}}</h3></div
                                 >
                             </a>
-                            <div class="panel-body">
+                            <div class="card-body">
                                 <div class="col-sm-2">
                                     <img src="{{URL::to('/')}}/images/{{$cctv_camera->image}}" class="img-thumbnail"
                                          width="100px"></div>

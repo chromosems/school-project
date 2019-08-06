@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.layout')
 
 @section('header')
 
@@ -7,12 +7,16 @@
 @endsection
 
 @section('content')
-    <div class="panel panel-default">
-        <div class="panel-heading">Technician:Add</div>
 
-        <div class="panel-body">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Technicians</h1>
+    </div>
+
+    <div class="card">
+        <div class="card-header">Technician:Add</div>
+
+        <div class="card-body">
             <div class="col-md-12">
-                <div class="row">
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -31,7 +35,7 @@
 
                     <div class="row">
                         <div class="col-sm-12 text-right">
-                            <a href="{{route('technician.index')}}" style="height: 50px;width: 200px;" class="btn
+                            <a href="{{route('technicians.index')}}"  class="btn
                             btn-info
                         text-right "
                                type="button">
@@ -40,7 +44,7 @@
                         </div>
                     </div>
                     <br>
-                    <form action="{{route('technician.store')}}" method="post" enctype="multipart/form-data"><!-- form
+                    <form action="{{route('technicians.store')}}" method="post" enctype="multipart/form-data"><!-- form
                     begins here -->
                         @csrf
                         <div class="row">
@@ -76,11 +80,17 @@
                                            placeholder="phone number">
                                 </div>
 
+                               
                                 <div class="form-group has-success">
-                                    <label>Company name</label>
-                                    <input type="text" class="form-control" name="company_name"
-                                           placeholder="Company name">
+                                    <label>Select Company</label>
+                                    <select class="form-control" name="company" required>
+                                        <option value="">--Select company--</option>
+                                        @foreach($companies as $company)
+                                            <option value="{{ $company->id }}">{{ $company->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
+
 
 
                                 <div class="form-group has-success">

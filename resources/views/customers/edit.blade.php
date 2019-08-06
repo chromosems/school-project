@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.layout')
 
 @section('header')
 
@@ -7,10 +7,13 @@
 @endsection
 
 @section('content')
-    <div class="panel panel-default">
-        <div class="panel-heading">Customer:Add</div>
 
-        <div class="panel-body">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    
+    <div class="card">
+        <div class="card-header">Customer:Add</div>
+
+        <div class="card-body">
             <div class="col-md-12">
                 <div class="row">
                     @if ($errors->any())
@@ -32,7 +35,7 @@
                     <div class="row">
 
                         <div class="col-sm-12 text-right">
-                            <a href="{{route('customer.index')}}" class="btn btn-info
+                            <a href="{{route('customers.index')}}" class="btn btn-info
                         text-right "
                                type="button"><i class="fa fa-book"></i>
                                 View

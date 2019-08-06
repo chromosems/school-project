@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.layout')
 
 @section('header')
 
@@ -8,21 +8,17 @@
 
 
 @section('content')
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Technicians</h1>
+    </div>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">Technicians:All</div>
+    <div class="card">
+        <div class="card-header">Technicians:All</div>
         <div class="col-md-12">
-            <div class="row">
                 <br>
-                <form action="/technician" method="POST" role="search">
-                    @csrf
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search for house location and prices "
-                               name="search">
-                    </div>
-                </form>
+               
                 <div class="col-sm-12 text-right">
-                    <a href="{{route('technician.create')}}" style="height: 50px;width: 200px;" class="btn
+                    <a href="{{route('technicians.create')}}"  class="btn
                         btn-success
                         text-right "
                        type="button"><i
@@ -43,15 +39,15 @@
                             </a>
 
                             <div class="panel-body">
-                                <h4><b></b><img src="{{URL::to('/')}}/images/{{$techician->image}}" class="thumbnail"
-                                                height="300px" width="350px"></h4>
-                                <h3>Company Name</h3>: {{$techician->company_name}}
+                                <h6><b></b><img src="{{URL::to('/')}}/images/{{$techician->image}}" class="thumbnail"
+                                                height="300px" width="350px"></h6>
+                                <h6>Company Name</h6>{{$techician->company->name}}
                             </div>
                         </div>
                     </div>
 
                 @endforeach
-            </div>
+        
         </div>
     </div>
 

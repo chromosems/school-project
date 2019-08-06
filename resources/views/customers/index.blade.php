@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.layout')
 
 @section('header')
 
@@ -9,14 +9,19 @@
 
 @section('content')
 
-    <div class="panel panel-default">
-        <div class="panel-heading">Customers:All</div>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Customers</h1>
+    </div>
+
+    <div class="card">
+        <div class="card-header">Customers:All</div>
+        <div class="card-body">
         <div class="col-md-12">
             <br>
             <div class="row">
                 <div class="col-sm-12 text-right">
-                    <a href="{{route('customer.create')}}" class="btn
-                        btn-primary
+                    <a href="{{route('customers.create')}}" class="btn
+                        btn-success
                         text-right "
                        type="button"><i
                             class="fa
@@ -51,24 +56,24 @@
                             <td>{{$customer->first_name}}</td>
                             <td>{{$customer->last_name}}</td>
                             <td>{{$customer->location}}</td>
-                            <td>{{$customer->service}}</td>
+                            <td>{{$customer->service->name}}</td>
                             <td>{{$customer->phone_number}}</td>
                             <td>
                                 <div class="btn-group">
                                     <a href="{{action('CustomerController@show',$customer->id)}}">
-                                        <button type="button" class="btn btn-block" data-toggle="modal"
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
                                                 data-target="#edit-modal">
-                                            <i class="fa fa-book">
+                                            <i class="fa fa-book">View
                                             </i>
                                         </button>
                                     </a>
 
                                 </div>
-                                <a href="{{route('customer.edit',$customer->id)}}">
-                                    <button type="button" class="btn btn-info"><i class="fa fa-pencil"></i></button>
+                                <a href="{{route('customers.edit',$customer->id)}}">
+                                    <button type="button" class="btn btn-info"><i class="fa fa-pencil"></i>Edit</button>
                                 </a>
 
-                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i>Delete</button>
 
 
                             </td>
@@ -77,7 +82,9 @@
                         </tr>
                     </tbody>
                 </table>
+</div>
             </div>
+        </div>
         </div>
         <center> <?php echo $customers->render();?></center>
     </div>

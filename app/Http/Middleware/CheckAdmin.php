@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Auth;
 
 class checkAdmin
 {
@@ -15,11 +16,15 @@ class checkAdmin
      */
     public function handle($request, Closure $next)
     {
+       /*
+       these calls for the names of the users
+       */
+        $userRoles = Auth::user()->roles->pluck('name');
         /*
-         * if user is not admin redirect back home
+         * if it does not contain admin return home
          */
-        if (Auth::user()->role !== 'Admin') {
-            return redirect('home');
+        if  (!$collection->contains('Admin')){
+           return redirect('/home');
         }
         return $next($request);
     }

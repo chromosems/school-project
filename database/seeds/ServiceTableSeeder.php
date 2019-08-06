@@ -14,16 +14,16 @@ class ServiceTableSeeder extends Seeder
         $services = [
             [
                 'name' => 'CCTV Camera',
-                'bio' => 'wew are extra ordinary, lets try our ability today and you see',
+                'description' => 'wew are extra ordinary, lets try our ability today and you see',
             ],
 
             [
                 'name' => 'Access Control',
-                'bio' => 'We are great let us share with you our experience at this security world,'
+                'description' => 'We are great let us share with you our experience at this security world,'
             ],
             [
                 'name' => 'Fire Alarm',
-                'bio' => 'very high potensial we gat here',
+                'description' => 'very high potensial we gat here',
             ],
 
 

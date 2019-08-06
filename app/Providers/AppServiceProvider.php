@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Company;
 use App\Service;
+use App\Company;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -27,13 +27,19 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        
         /*
-        //  * this is a class based composer view */
-        // View::share('services', Service::all());
-        // Schema::defaultStringLength(191);
+         * this is a class based composer view
+         */
 
 
-        // View::share('companies', Company::all());
-        // Schema::defaultStringLength(191);
+        View::share('services', Service::all());
+        Schema::defaultStringLength(191);
+
+
+        View::share('companies', Company::all());
+        Schema::defaultStringLength(191);
+
     }
+
 }

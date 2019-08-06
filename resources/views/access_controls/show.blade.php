@@ -8,9 +8,12 @@
 
 
 @section('content')
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h3 class="h2">Access control</h3>
+    </div>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">{{$access_controls->company_name}}</div>
+    <div class="card">
+        <div class="card-header">{{$access_controls->company_name}}</div>
         <div class="col-md-12">
             <div class="row">
                 <div class="col-sm-12 text-right">
@@ -26,9 +29,9 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <div class="panel panel-success">
-                        <div class="panel-heading"><h2>{{$access_controls->company_name}}</h2></div>
-                        <div class="panel-body">
+                    <div class="card">
+                        <div class="card-header"><h2>{{$access_controls->company_name}}</h2></div>
+                        <div class="card-body">
                             <h4><b>Date: </b>{{$access_controls->date}}</h4>
                             <h4><b>Access control type: </b>{{$access_controls->access_control}}</h4>
                             <h4><b>Location: </b>{{$access_controls->location}}</h4>
@@ -39,9 +42,9 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="panel panel-success">
-                        <div class="panel-heading"><h2></h2></div>
-                        <div class="panel-body">
+                    <div class="card">
+                        <div class="card-header"><h2></h2></div>
+                        <div class="card-body">
                             The last of the existing sales wil be executed here
                         </div>
                     </div>

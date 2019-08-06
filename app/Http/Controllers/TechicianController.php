@@ -42,7 +42,7 @@ class TechicianController extends Controller
         $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
-            'company_name' => 'required',
+            'company' => 'required',
             'position' => 'required',
             'phone_number' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -58,14 +58,14 @@ class TechicianController extends Controller
             'image' => $imageName,
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
-            'company_name' => $request->company_name,
+            'company_id' => $request->company,
             'position' => $request->position,
             'phone_number' => $request->phone_number,
             'job_type' => $request->job_type,
             'date' => $request->date,
         );
         Technician::create($form_data);
-        return redirect('technician/create')->with('success', 'A new Technician  has been registered');
+        return redirect('technicians/create')->with('success', 'A new Technician  has been registered');
 
 
     }

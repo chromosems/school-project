@@ -14,8 +14,12 @@ class Customer extends Model
         'location',
         'image',
         'problem_description',
-        'service',
-        'phone_number'
+        'service_id',
+        'phone_number',
     ];
 
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
 }

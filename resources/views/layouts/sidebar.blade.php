@@ -4,7 +4,7 @@
             <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
         </div>
         <div class="profile-usertitle">
-            <div class="profile-usertitle-name">Username</div>
+            <div class="profile-usertitle-name">Guest</div>
             <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
         </div>
         <div class="clear"></div>
@@ -33,9 +33,11 @@
             {{--</ul>--}}
         {{--</li>--}}
         <li><a href="/dashboard"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+
         @foreach($services as $service)
             <li><a href="/services/{{ $service->id }}"><em class="fa fa-server"></em>    {{ $service->name }}</a></li>
         @endforeach
+
         <li><a href="/customer"><em class="fa fa-calendar">&nbsp;</em>Customers </a></li>
         {{--<li><a href="/cctv_cameras"><em class="fa fa-calendar">&nbsp;</em></a></li>--}}
         {{--<li><a href="/access_controls"><em class="fa fa-calendar">&nbsp;</em>Access Control</a></li>--}}
@@ -43,6 +45,18 @@
         <li><a href="/technician"><em class="fa fa-calendar">&nbsp;</em>Technicians</a></li>
 
 
-        <li><a href="/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+        <li>
+            {{-- <a href="/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a> --}}
+            <a class="fa fa-power-off" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        </li>
+
     </ul>
 </div><!--/.sidebar-->

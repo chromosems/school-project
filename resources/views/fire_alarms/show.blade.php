@@ -8,9 +8,12 @@
 
 
 @section('content')
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h3 class="h2">Fire Alarm</h3>
+    </div>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">{{$fire_alarms->company_name}}</div>
+    <div class="card">
+        <div class="card-header">{{$fire_alarms->company_name}}</div>
         <div class="col-md-12">
             <div class="row">
                 <div class="col-sm-12 text-right">
@@ -27,8 +30,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h2><b>Company Name:</b>{{$fire_alarms->company_name}}</h2></div>
-                        <div class="panel-body">
+                        <div class="card-header"><h2><b>Company Name:</b>{{$fire_alarms->company_name}}</h2></div>
+                        <div class="card-body">
                             <div class="col-sm-3">
                             <img src="{{URL::to('/')}}/images/{{$fire_alarms->image}}" class="img-thumbnail"
                                  width="200px"></div>

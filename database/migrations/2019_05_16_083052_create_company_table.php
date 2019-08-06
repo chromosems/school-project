@@ -18,7 +18,6 @@ class CreateCompanyTable extends Migration
             $table->string('name');
             $table->longText('bio');
             $table->timestamps();
-
         });
     }
 

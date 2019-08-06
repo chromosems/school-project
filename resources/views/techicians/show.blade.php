@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.layout')
 
 @section('header')
 
@@ -15,10 +15,10 @@
             <div class="row">
 
                 <div class="col-sm-12 text-right">
-                    <a href="{{route('technician.index')
+                    <a href="{{route('technicians.index')
                         }}">
                         <button class="btn btn-info text-right" type="button"><i class="fa
-                            fa-backward"></i></button>
+                            fa-backward">Back</i></button>
                     </a>
                 </div>
 
@@ -32,6 +32,7 @@
                                 <div class="panel-heading"><h2><b>Last
                                             Name:</b>{{$techicians->last_name}}</h2></div>
                             </center>
+                        </div>
                             <div class="panel-body">
                                 <center>
 
@@ -40,16 +41,19 @@
                                 <br>
                                 <br>
                                 <br>
-
-                                <div class="col-sm-4">
+                                 <div class="row">
+                                <div class="col-sm-3">
                                     <h4><b>Date: </b>{{$techicians->date}}</h4>
-                                    <h4><b>First name: </b>{{$techicians->first_name}}</h4></div>
-                                <div class="col-sm-4">
-                                    <h4><b>Last Name: </b>{{$techicians->last_name}}</h4>
+                                    <h4><b>First name: </b>{{$techicians->first_name}}</h4>
+                            
+                               
+                                    <h4><b>Last Name: </b>{{$techicians->last_name}}</h4></div>
+                                     <div class="col-sm-6">
                                     <h4><b>position:</b>{{$techicians->position}}</h4>
                                     <h4><b>Phone Number: </b>{{$techicians->phone_number}}</h4></div>
-                                <h4><b>Job Type: </b>{{$techicians->job_type}}</h4>
-                                <h4><b>Company Name: </b>{{$techicians->company_name}}</h4>
+                                    <div class="col-sm-3">
+                                    <h4><b>Job Type: </b>{{$techicians->job_type}}</h4>
+                                    <h4><b>Company Name: </b>{{$techicians->company->name}}</h4></div>
 
 
                             </div>
@@ -58,7 +62,7 @@
                     </div>
 
 
-                </div>
+            
             </div>
         </div>
     </div>

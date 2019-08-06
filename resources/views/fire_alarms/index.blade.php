@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.layout')
 
 @section('header')
 
@@ -8,9 +8,12 @@
 
 
 @section('content')
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h3 class="h2">Fire alarm</h3>
+    </div>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">Fire Alarm:All</div>
+    <div class="card">
+        <div class="card-header">Fire Alarm:All</div>
         <div class="col-md-12">
             <div class="row">
                 <div class="col-sm-12 text-right">
@@ -31,11 +34,11 @@
                         <div class="panel panel-success">
                             <a href="{{action('FireAlarmController@show',$fire_alarm->id)}}">
                                 <div
-                                    class="panel-heading"><h3><b>Company
+                                    class="card-header"><h3><b>Company
                                             name:</b>{{$fire_alarm->company_name}}</h3></div
                                 >
                             </a>
-                            <div class="panel-body">
+                            <div class="card-body">
                                 <div class="col-sm-2">
                                     <img src="{{URL::to('/')}}/images/{{$fire_alarm->image}}" class="img-thumbnail"
                                          width="100px"></div>

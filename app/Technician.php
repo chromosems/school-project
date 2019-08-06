@@ -11,7 +11,7 @@ class Technician extends Model
         'first_name',
         'image',
         'last_name',
-        'company_name',
+        'company_id',
         'position',
         'job_type',
         'phone_number',

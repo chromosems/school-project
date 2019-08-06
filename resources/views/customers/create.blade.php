@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.layout')
 
 @section('header')
 
@@ -7,12 +7,14 @@
 @endsection
 
 @section('content')
-    <div class="panel panel-default">
-        <div class="panel-heading">Customer:Add</div>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h3 class="h2">customers</h3>
+    </div>
+    <div class="card">
+        <div class="card-header">Customer:Add</div>
 
-        <div class="panel-body">
+        <div class="card-body">
             <div class="col-md-12">
-                <div class="row">
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -30,9 +32,8 @@
                     @endif
 
                     <div class="row">
-
                         <div class="col-sm-12 text-right">
-                            <a href="{{route('customer.index')}}" class="btn btn-info
+                            <a href="{{route('customers.index')}}" class="btn btn-primary
                         text-right "
                                type="button"><i class="fa fa-book"></i>
                                 View
@@ -40,7 +41,7 @@
                         </div>
                     </div>
                     <br>
-                    <form action="{{route('customer.store')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('customers.store')}}" method="post" enctype="multipart/form-data">
                         <!-- form begins here -->
                         @csrf
                         <div class="row">
@@ -83,12 +84,11 @@
                             <div class="col-sm-6">
                                 <div class="form-group has-success">
                                     <label>Select Service</label>
-                                    <select class="form-control" name="service">
-                                        <option value="select(default)">select</option>
-                                        <option value="Fire alarm">fire alarm</option>
-                                        <option value="CCTV camera">cctv camera</option>
-                                        <option value="Access control">access control</option>
-                                        <option value="Broker">House To Rent</option>
+                                    <select class="form-control" name="service" required>
+                                        <option value="">--Select Service--</option>
+                                        @foreach($services as $service)
+                                            <option value="{{ $service->id }}">{{ $service->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
 
@@ -109,7 +109,7 @@
                         </div>
 
                     </form><!-- form close --->
-                </div>
+            
             </div>
         </div>
     </div>

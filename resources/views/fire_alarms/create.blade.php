@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.layout')
 
 @section('header')
 
@@ -7,10 +7,14 @@
 @endsection
 
 @section('content')
-    <div class="panel panel-default">
-        <div class="panel-heading">Fire Alarm: Add</div>
 
-        <div class="panel-body">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h3 class="h2">Fire Alarm</h3>
+    </div>
+    <div class="card">
+        <div class="card-header">Fire Alarm: Add</div>
+
+        <div class="card-body">
             <div class="col-md-12">
                 <!--notification alert -->
                 @if ($errors->any())

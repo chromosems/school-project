@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
-use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -17,7 +16,6 @@ class CustomerController extends Controller
     {
         $customers = Customer::latest()->paginate(6);
         return view('customers.index', compact('customers'));
-
     }
 
     /**
@@ -51,6 +49,7 @@ class CustomerController extends Controller
             'problem_description' => 'required',
             'service' => 'required',
         ]);
+
         /**
          * saving the image
          **/
@@ -61,24 +60,23 @@ class CustomerController extends Controller
         /**
          * capturing  data  from the  forms.
          */
-        $form_data = array(
+        $form_data = [
             'date' => $request->date,
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'location' => $request->location,
             'phone_number' => $request->phone_number,
             'problem_description' => $request->problem_description,
-            'service' => $request->service,
+            'service_id' => $request->service,
             'image' => $imageName,
-        );
+        ];
+
         /***
          * storing form data into the database
          */
         Customer::create($form_data);
 
-        return redirect('customer/create')->with('success', 'Welcome Aboard Customer');
-
-
+        return redirect('customers/create')->with('success', 'Welcome Aboard Customer');
     }
 
     /**
@@ -102,15 +100,15 @@ class CustomerController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-//    public function edit($id)
-//    {
-//        /**
-//         * this calls for the page to be viewed as its edited*/
-//        $customer = Customer::find($id);
-//        return view('customers.edit', compact($customer));
-//
-//    }
-//
+   public function edit($id)
+   {
+       /**
+        * this calls for the page to be viewed as its edited*/
+       $customer = Customer::findOrfail($id);
+       return view('customers.edit', compact($customer));
+
+   }
+
 //    /**
 //     * Update the specified resource in storage.
 //     *
