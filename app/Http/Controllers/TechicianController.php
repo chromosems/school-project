@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Technician;
+use App\Models\Technician;
 
 class TechicianController extends Controller
 {

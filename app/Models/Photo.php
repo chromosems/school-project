@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,7 +14,7 @@ class Photo extends Model
 
     public function broker()
     {
-        return $this->belongsTo('App\Broker');
+        return $this->belongsTo('App\Models\Broker');
     }
 }
 

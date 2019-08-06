@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Service;
-use App\Company;
+use App\Models\Service;
+use App\Models\Company;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;

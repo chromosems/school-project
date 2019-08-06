@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models\Http\Controllers;
 
-use App\Access_control;
+use App\Models\Access_control;
 use Illuminate\Http\Request;
 
 class AccessControlsController extends Controller

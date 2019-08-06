@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models\Http\Controllers;
 
-use App\Fire_Alarm;
+use App\Models\Fire_Alarm;
 use Illuminate\Http\Request;
 
 class FireAlarmController extends Controller

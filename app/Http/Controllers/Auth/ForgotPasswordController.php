@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Models\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Models\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ForgotPasswordController extends Controller
@@ -14,7 +14,7 @@ class ForgotPasswordController extends Controller
     |
     | This controller is responsible for handling password reset emails and
     | includes a trait which assists in sending these notifications from
-    | your application to your users. Feel free to explore this trait.
+    | your App\Modelslication to your users. Feel free to explore this trait.
     |
     */
 

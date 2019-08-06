@@ -40,7 +40,8 @@
             "database/factories"
         ],
         "files":[
-            "app/helpers.php"
+            "app/helpers.php",
+            "app/constants.php"
         ]
     },
     "autoload-dev": {

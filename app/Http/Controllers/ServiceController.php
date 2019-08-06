@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models\Http\Controllers;
 
-use App\Service;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
