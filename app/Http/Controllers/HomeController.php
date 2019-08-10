@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models\Http\Controllers;
 
 use illuminate\Support\Facades\Auth;
 
@@ -18,7 +18,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the App\Modelslication dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */

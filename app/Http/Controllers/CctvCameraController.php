@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models\Http\Controllers;
 
-use App\Cctv_camera;
+use App\Models\Cctv_camera;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\Array_;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models\Http\Controllers;
 
-use App\Broker;
+use App\Models\Broker;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolver\RequestValueResolver;
 

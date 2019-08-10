@@ -15,15 +15,17 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('service_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned()->index();
+            $table->bigInteger('service_id')->unsigned()->index();
 
             $table->string('title');
             $table->text('image')->nullable();
-            $table->string('location');
+            $table->string('location')->nullable();
             $table->text('description');
 
             $table->timestamps();
 
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('service_id')->references('id')->on('services');
         });
     }
