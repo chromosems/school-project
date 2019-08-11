@@ -31,7 +31,7 @@ class ServiceTableSeeder extends Seeder
         
         ];
 
-        foreach (SERVICES as $service) {
+        foreach ($services as $service) {
             Service::create($service);
         }
     }
