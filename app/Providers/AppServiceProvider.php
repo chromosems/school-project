@@ -33,8 +33,8 @@ class AppServiceProvider extends ServiceProvider
          */
 
 
-        View::share('services', Service::all());
-        Schema::defaultStringLength(191);
+         View::share('services', Service::all());
+         Schema::defaultStringLength(191);
 
 
         View::share('companies', Company::all());
