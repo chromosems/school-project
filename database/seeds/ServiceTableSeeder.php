@@ -22,12 +22,13 @@ class ServiceTableSeeder extends Seeder
                 'name' => 'Access Control',
                 'description' => 'We are great let us share with you our experience at this security world,'
             ],
+            
             [
                 'name' => 'Fire Alarm',
                 'description' => 'very high potensial we gat here',
             ],
 
-
+        
         ];
 
         foreach (SERVICES as $service) {
