@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Http\Controllers;
+namespace App\Http\Controllers;
 
 use App\Models\Fire_Alarm;
 use Illuminate\Http\Request;

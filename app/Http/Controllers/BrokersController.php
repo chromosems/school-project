@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Http\Controllers;
+namespace App\Http\Controllers;
 
 use App\Models\Broker;
 use Illuminate\Http\Request;
