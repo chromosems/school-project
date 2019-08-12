@@ -27,8 +27,6 @@ class ServiceTableSeeder extends Seeder
                 'name' => 'Fire Alarm',
                 'description' => 'very high potensial we gat here',
             ],
-
-        
         ];
 
         foreach ($services as $service) {
