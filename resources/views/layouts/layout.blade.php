@@ -71,6 +71,13 @@
                         </a>
                   </li>
                   <li class="nav-item">
+                    <a class="nav-link" href="/tickets">
+                        <span data-feather="users"></span>
+                        Tickets
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
                     <a class="nav-link" href="/customers">
                         <span data-feather="users"></span>
                         Customers

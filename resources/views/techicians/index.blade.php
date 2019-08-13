@@ -34,13 +34,13 @@
                         <div class="panel panel success">
                             <a href="{{action('TechicianController@show',$techician->id)}}">
                                 <div
-                                    class="panel-heading"><h3>First Name
-                                        <i> {{$techician->first_name}}</i></h3></div>
+                                    class="panel-heading"><h3>
+                                        <i>View Technician Details Here {{$techician->first_name}}</i></h3></div>
                             </a>
 
                             <div class="panel-body">
                                 <h6><b></b><img src="{{URL::to('/')}}/images/{{$techician->image}}" class="thumbnail"
-                                                height="300px" width="350px"></h6>
+                                                height="100px" width="150px"></h6>
                                 <h6>Company Name</h6>{{$techician->company->name}}
                             </div>
                         </div>

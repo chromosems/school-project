@@ -15,18 +15,19 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned()->index();
-            $table->bigInteger('service_id')->unsigned()->index();
+            $table->bigInteger('user_id')->nullable();
+            // $table->bigInteger('service_id')->unsigned()->index();
 
             $table->string('title');
             $table->text('image')->nullable();
             $table->string('location')->nullable();
             $table->text('description');
-
+            $table->string('slug')->nullable();
+            $table->tinyinteger('status')->default(1);
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('service_id')->references('id')->on('services');
+            // $table->foreign('user_id')->references('id')->on('users');
+            // $table->foreign('service_id')->references('id')->on('services');
         });
     }
 
