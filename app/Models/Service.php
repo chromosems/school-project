@@ -13,13 +13,8 @@ class Service extends Model
         return $this->belongsToMany(Company::class);
     }
 
-    public function technician()
+    public function tickets()
     {
-        return $this->belongsTo(Technician::class);
-    }
-
-    public function customers()
-    {
-        return $this->hasMany(Customer::class);
+        return $this->hasMany(Ticket::class);
     }
 }

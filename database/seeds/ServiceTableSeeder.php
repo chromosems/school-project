@@ -30,7 +30,9 @@ class ServiceTableSeeder extends Seeder
         ];
 
         foreach ($services as $service) {
-            Service::create($service);
+            $service = new Service($service);
+            $service->slug = str_slug($service->name);
+            $service->save();
         }
     }
 }

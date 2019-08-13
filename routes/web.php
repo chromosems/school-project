@@ -14,10 +14,15 @@ Auth::routes();
 
         Route::resource('/customers', 'CustomerController');
         Route::resource('/technicians', 'TechicianController');
+        
+        Route::get('/services', 'ServiceController@index');
+        Route::get('/services/{slug}', 'ServiceController@show');
 
-        Route::resource('/fire_alarms', 'FireAlarmController');
-        Route::resource('/cctv_cameras', 'CctvCameraController');
-        Route::resource('/brokers', 'BrokersController');
-        Route::resource('/services', 'ServiceController');
+
+
+
+        // Route::resource('/fire_alarms', 'FireAlarmController');
+        // Route::resource('/cctv_cameras', 'CctvCameraController');
+        // Route::resource('/brokers', 'BrokersController');
 
 //    

@@ -14,7 +14,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-       $services = Service::latest()->paginate(6);
+        $services = Service::all();
+
+        return view('services.index', compact('services'));
     }
 
     /**
@@ -44,9 +46,17 @@ class ServiceController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $service = Service::find($id)->load('customers');
+        $service = Service::where('slug', $slug)->first();
+
+        if (!$service) {
+            flash("We could not find that product.")->error();
+            return back();
+        }
+
+        $service->load('tickets');
+
         return view('services.show', compact('service'));
     }
 
