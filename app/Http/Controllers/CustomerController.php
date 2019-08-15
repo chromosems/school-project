@@ -102,63 +102,63 @@ class CustomerController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-   public function edit($id)
-   {
-       /**
-        * this calls for the page to be viewed as its edited*/
-       $customer = Customer::findOrfail($id);
-       return view('customers.edit', compact($customer));
+//    public function edit($id)
+//    {
+//        /**
+//         * this calls for the page to be viewed as its edited*/
+//        $customer = Customer::findOrfail($id);
+//        return view('customers.edit')->with('customer', $customer);
 
-   }
+//    }
 
-//    /**
-//     * Update the specified resource in storage.
-//     *
-//     * @param  \Illuminate\Http\Request $request
-//     * @param  int $id
-//     * @return \Illuminate\Http\Response
-//     */
+   /**
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request $request
+    * @param  int $id
+    * @return \Illuminate\Http\Response
+    */
 //    public function update(Request $request, $id)
 //    {
-////        //
-////        $imageName = $request->hidden_image;
-////        $image = $request->file('image');
-////        if ($image != '') {
-////            $request->validate([
-////                'date' => 'required',
-////                'first_name' => 'required',
-////                'last_name' => 'required',
-////                'location' => 'required',
-////                'phone_number' => 'required',
-////                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-////                'problem_description' => 'required',
-////                'service' => 'required',
-////            ]);
-////            $imageName = rand() . '.' . $image->getClientOriginalExtension();
-////            $image->move(public_path('images'), $imageName);
-////        } else {
-////            $request->validate([
-////                'date' => 'required',
-////                'first_name' => 'required',
-////                'last_name' => 'required',
-////                'location' => 'required',
-////                'phone_number' => 'required',
-////                'problem_description' => 'required',
-////                'service' => 'required',
-////            ]);
-////        }
-////        $form_data = array(
-////            'date' => $request->date,
-////            'first_name' => $request->first_name,
-////            'last_name' => $request->last_name,
-////            'location' => $request->location,
-////            'phone_number' => $request->phone_number,
-////            'problem_description' => $request->problem_description,
-////            'service' => $request->service,
-////            'image' => $imageName
-////        );
-////        Customer::whereId($id)->update($form_data);
-////        return redirect('customers/show');
+//        //
+//        $imageName = $request->hidden_image;
+//        $image = $request->file('image');
+//        if ($image != '') {
+//            $request->validate([
+//                'date' => 'required',
+//                'first_name' => 'required',
+//                'last_name' => 'required',
+//                'location' => 'required',
+//                'phone_number' => 'required',
+//                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+//                'problem_description' => 'required',
+//                'service' => 'required',
+//            ]);
+//            $imageName = rand() . '.' . $image->getClientOriginalExtension();
+//            $image->move(public_path('images'), $imageName);
+//        } else {
+//            $request->validate([
+//                'date' => 'required',
+//                'first_name' => 'required',
+//                'last_name' => 'required',
+//                'location' => 'required',
+//                'phone_number' => 'required',
+//                'problem_description' => 'required',
+//                'service' => 'required',
+//            ]);
+//        }
+//        $form_data = array(
+//            'date' => $request->date,
+//            'first_name' => $request->first_name,
+//            'last_name' => $request->last_name,
+//            'location' => $request->location,
+//            'phone_number' => $request->phone_number,
+//            'problem_description' => $request->problem_description,
+//            'service' => $request->service,
+//            'image' => $imageName
+//        );
+//        Customer::whereId($id)->update($form_data);
+//        return redirect('customers/show');
 //    }
 //
 //    /**
@@ -167,14 +167,11 @@ class CustomerController extends Controller
 //     * @param  int $id
 //     * @return \Illuminate\Http\Response
 //     */
-//    public function destroy($id)
-//    {
-//        //
-//        $customer = Customer::findOrfail($id);
-//        if (is_null($customer)) {
-//            return redirect('customers');
-//        }
-//        $customer->delete();x`
-//        return redirect('customers');
-//    }
+   public function destroy($id)
+   {
+       //
+       $customer = Customer::findOrfail($id);
+       $customer->delete();
+       return redirect('customers');
+   }
 }
