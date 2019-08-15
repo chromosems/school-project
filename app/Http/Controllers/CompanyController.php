@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service;
 use Illuminate\Http\Request;
+use App\Models\Company;
 
-class ServiceController extends Controller
+class CompanyController extends Controller
 {
-    public function __construct(){
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -17,9 +14,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::paginate(4);
-
-        return view('services.index', compact('services'));
+        //
+        $companies = Company::paginate(5);
+        return view('companies.index', compact('companies'));
     }
 
     /**
@@ -29,12 +26,13 @@ class ServiceController extends Controller
      */
     public function create()
     {
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -45,27 +43,20 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        $service = Service::where('slug', $slug)->first();
-
-        if (!$service) {
-            flash("We could not find that product.")->error();
-            return back();
-        }
-
-        $service->load('tickets');
-
-        return view('tickets.create', compact('ticket'));
+        //
+        $companies = Company::findOrfail($id);
+        return view('companies.show', compact('companies'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -76,8 +67,8 @@ class ServiceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -88,7 +79,7 @@ class ServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="icon" type="image/png" href="{{ asset('img/favicon.jpg') }}">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title> Tech Support </title>
+    <title> After Sales Support System </title>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     {{-- <script src="path/to/dist/feather.js"></script> --}}
@@ -38,7 +38,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/"><span class="text-primary">TECH</span> SUPPORT</a>
+            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/"><span class="text-primary">AFTER SALES</span> SUPPORT </a>
             {{-- Uncomment this if u need it --}}
             {{-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> --}}
             <ul class="navbar-nav px-3">
@@ -54,6 +54,8 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
+
+                        
                     @endguest
                 </li>
             </ul>
@@ -71,10 +73,26 @@
                         </a>
                   </li>
                   <li class="nav-item">
+                    <a class="nav-link" href="/tickets">
+                        <span data-feather="users"></span>
+                        Tickets
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
                     <a class="nav-link" href="/customers">
                         <span data-feather="users"></span>
                         Customers
                     </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/services">
+                        <span data-feather="users"></span>
+                        services
+                    </a>
+
+                    
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/technicians">
@@ -82,31 +100,14 @@
                         Technicians
                     </a>
                   </li>
+
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <span data-feather="shopping-cart"></span>
-                        Services
+                    <a class="nav-link" href="/companies">
+                        <span data-feather="file"></span>
+                        Companies
                     </a>
                   </li>
-                      @foreach($services as $service)
-                    <li><a href="/services/{{ $service->id }}"><em class="fa fa-server"></em>    {{ $service->name }}</a></li>
-                   @endforeach
-                   </ul>
 
-                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                    <span>Saved reports</span>
-                    <a class="d-flex align-items-center text-muted" href="#">
-                        <span data-feather="plus-circle"></span>
-                    </a>
-                </h6>
-                <ul class="nav flex-column mb-2">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="file-text"></span>
-                            Statistics
-                        </a>
-                    </li>
-                </ul>
               </div>
             </nav>
 

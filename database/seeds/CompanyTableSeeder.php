@@ -15,16 +15,54 @@ class CompanyTableSeeder extends Seeder
         $companies = [
             [
                 'name' => 'Wallah Technical Systems',
-                'bio' => 'wew are extra ordinary, lets try our ability today and you see',
+                'location' => 'sonde',
+                'contact' => '070067689',
+                'bio' => 'Having a company bio or company overview is important to give 
+                a brief summary of your business to your audiences, such as media, customers, analysts and investors. 
+                It should be functional and updated over time – for example, 
+                when you gain major customers or achieve a target annual revenue.',
             ],
             [
-                'name' => 'Ensibuuko',
-                'bio' => 'Lalalalalala'
+                'name' => 'Ensibuuko  Technologies limited',
+                'location' => 'Uganda',
+                'contact' => '078654643',
+                'bio' => 'Having a company bio or company overview is important to give 
+                a brief summary of your business to your audiences, such as media, customers, analysts and investors.
+                 It should be functional and updated over time – for example, when you gain major customers or achieve a target annual revenue.'
             ],
             [
                 'name' => 'Kibs Systems Limited',
-                'bio' => 'very high potential we gat here'
-            ]
+                'location' => 'Ntinda',
+                'contact' => '0706355311',
+                'bio' => 'Having a company bio or company overview is important to give a brief summary of your business to your audiences,
+                 such as media, customers,
+                 analysts and investors. It should be functional and updated over time – for example, when you gain major customers or achieve a target annual revenue.'
+            ],
+            [
+                'name' => 'House U-In Systems Limited',
+                'location' => 'Kireka',
+                'contact' => '078355311',
+                'bio' => 'Having a company bio or company overview is important to give a brief summary of your business to your audiences, 
+                such as media, customers, analysts and investors.
+                 It should be functional and updated over time – for example, when you gain major customers or achieve a target annual revenue.'
+            ],
+            [
+                'name' => 'Kabus Furniture',
+                'location' => 'kawempe Kampala',
+                'contact' => '079365726',
+                'bio' => 'Having a company bio or company overview is important to give a brief summary of your business to your audiences, 
+                such as media, customers, analysts and investors.
+                 It should be functional and updated over time – for example, when you gain major customers or achieve a target annual revenue.'
+            ],
+            [
+                'name' => 'Delton security Universe',
+                'location' => 'kyambogo',
+                'contact' => '076546527',
+                'bio' => 'Having a company bio or company overview is important to give a brief summary of your business to your audiences,
+                 such as media, customers, analysts and investors. 
+                It should be functional and updated over time – for example, when you gain major customers or achieve a target annual revenue.'
+            ],
+
         ];
 
         foreach ($companies as $company) {

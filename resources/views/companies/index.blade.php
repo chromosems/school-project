@@ -21,18 +21,18 @@
     </div><br />
     @endif
 
-    @foreach ($services as $service)
+    @foreach ($companies as $company)
     <div class="card mb-2">
 
         <div class="card-body">
 
-            <p><a href="/services/{{ $service->slug }}">{{ $service->name }}</a></p>
+        <p><a href="/companies/{{ $company->id }}">{{ $company->name }}</a></p>
 
-            <span>{{$service->description}}</span>
+            <span>{{$company->location}}</span>
         </div>
     </div>
     @endforeach
-    <?php echo $services->render(); ?>
+    <?php echo $companies->render(); ?>
 
 </div>
 

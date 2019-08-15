@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Compdetail;
 use Illuminate\Http\Request;
-use App\Models\Technician;
 
-class TechicianController extends Controller
+class CompdetailsController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth',['except'=>['index','show']]);
+        $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -18,8 +18,6 @@ class TechicianController extends Controller
     public function index()
     {
         //
-        $techicians = Technician::latest()->paginate(6);
-        return view('techicians.index', compact('techicians'));
     }
 
     /**
@@ -30,79 +28,79 @@ class TechicianController extends Controller
     public function create()
     {
         //
-        return view('techicians.create');
+        return view('compdetails.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         //
         $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'company' => 'required',
-            'position' => 'required',
-            'phone_number' => 'required',
+            'name' => 'required',
+            'location' => 'required',
+            'contact' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'job_type' => 'required',
-            'date' => 'required',
+            'bio' => 'required',
         ]);
 
+        /**
+         * saving the image
+         **/
         $image = $request->file('image');
         $imageName = time() . '.' . $request->image->getClientOriginalName();
         $request->image->move(public_path('images'), $imageName);
 
-        $form_data = array(
+        /**
+         * capturing  data  from the  forms.
+         */
+        $form_data = [
+            'name' => $request->name,
+            'location' => $request->location,
+            'contact' => $request->contact,
+            'description' => $request->description,
             'image' => $imageName,
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'company_id' => $request->company,
-            'position' => $request->position,
-            'phone_number' => $request->phone_number,
-            'job_type' => $request->job_type,
-            'date' => $request->date,
-        );
-        Technician::create($form_data);
-        return redirect('technicians/create')->with('success', 'A new Technician  has been registered');
+        ];
 
+        /***
+         * storing form data into the database
+         */
+        Compdetail::create($form_data);
 
+        return redirect('compdetails/create')->with('success', 'Welcome Aboard Customer');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         //
-        $techicians = Technician::find($id);
-        return view('techicians.show', compact('techicians'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         //
-
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -113,7 +111,7 @@ class TechicianController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

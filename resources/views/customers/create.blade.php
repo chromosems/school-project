@@ -93,12 +93,12 @@
                                 </div>
 
 
-                                <div class="form-group has-success">
+                                <!-- <div class="form-group has-success">
                                     <label>Problem Description</label>
                                     <textarea type="text" name="problem_description" id="problem_description"
                                               class="form-control"
                                               rows="20" cols="30" ;></textarea>
-                                </div>
+                                </div> -->
                             </div>
 
 

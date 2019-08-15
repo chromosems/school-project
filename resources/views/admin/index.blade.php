@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.layout')
 
 @section('content')
 
@@ -50,7 +50,7 @@
                     <div class="card">
                         <div class="card-header">Unassigned prospects</div>
                         <ul class="list-group list-group-flush">
-                            @for($i =0; $i <6;$i++)
+                            @for($i =0; $i <8;$i++)
                                 <li class="list-group-item">
                                     Mr. Prospect <span class="float-right btn btn-sm btn-success">Assign</span>
                                 </li>
