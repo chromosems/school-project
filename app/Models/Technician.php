@@ -8,7 +8,7 @@ class Technician extends Model
 {
     //
     protected $fillable = [
-    'first_name',
+        'first_name',
         'image',
         'last_name',
         'company_id',

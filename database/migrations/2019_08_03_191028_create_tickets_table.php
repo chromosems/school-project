@@ -9,17 +9,18 @@ class CreateTicketsTable extends Migration
     /**
      * Run the migrations.
      *
+     * 
      * @return void
      */
     public function up()
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned()->index();
-            $table->bigInteger('service_id')->unsigned()->index();
+            $table->bigInteger('user_id')->unsigned()->index()->nullable();
+            $table->bigInteger('service_id')->unsigned()->index()->nullable();
 
             $table->string('title');
-            $table->text('image')->nullable();
+            $table->string('department');
             $table->string('location')->nullable();
             $table->text('description');
             $table->string('slug')->nullable();

@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Models\Ticket;
+use Illuminate\Support\Facades\Auth;
 
 class TicketController extends Controller
 {
@@ -15,7 +17,7 @@ class TicketController extends Controller
     public function index()
     {
         //
-        $tickets = Ticket::latest()->paginate(6);
+        $tickets = Ticket::all();
         return view('tickets.index', compact('tickets'));
     }
 
@@ -40,15 +42,11 @@ class TicketController extends Controller
     {
         //
         $request->validate([
-            'title' => 'required|min:4',
-            'location' => 'required|min:5',
-            'description' => 'required|min:10',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'title' => 'required',
+            'department'=>'required',
+            'location' => 'required',
+            'description' => 'required',
         ]);
-        /*saving an image_*/
-        $image = $request->file('image');
-        $imageName = time() . '.' . $request->image->getClientOriginalName();
-        $request->image->move(public_path('images'), $imageName);
 
         /**storing  form data */
         $slug = str_slug($request->title);
@@ -75,12 +73,10 @@ class TicketController extends Controller
      */
     public function show($slug)
     {
-        //
-        $ticket = Ticket::whereSlug($slug)->firstOrFail();
+        $ticket = Ticket::whereSlug($slug)->first();
         /**this code display all the comments created */
         $comments = $ticket->comments()->get();
-
-        return view('tickets.show',compact('ticket','comments'));
+        return view('tickets.show', compact('ticket', 'comments'));
     }
 
     /**
@@ -103,10 +99,22 @@ class TicketController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Ticket $ticket)
     {
-        //
-        
+        // dd($ticket);
+        // $ticket = Ticket::whereSlug($slug)->firstOrFail();
+        $ticket->title = $request->get('title');
+        $ticket->location = $request->get('location');
+        $ticket->description = $request->get('description');
+        $ticket->slug = str_slug($request->title);
+        if ($request->get('status') != null) {
+            $ticket->status = 0;
+        } else {
+            $ticket->status = 1;
+        }
+
+        $ticket->save();
+        return redirect('/tickets')->with('status', 'The  ticket' .  $ticket->slug  .   'has been updated!');
     }
 
     /**
@@ -115,8 +123,11 @@ class TicketController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
         //
+        $ticket = Ticket::whereSlug($slug)->firstOrFail();
+        $ticket->delete();
+        return redirect('/tickets')->with('status', 'The ticket' . $slug . 'has been deleted');
     }
 }

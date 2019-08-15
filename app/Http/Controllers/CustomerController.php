@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -46,7 +49,6 @@ class CustomerController extends Controller
             'location' => 'required',
             'phone_number' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'problem_description' => 'required',
             'service' => 'required',
         ]);
 
@@ -76,7 +78,7 @@ class CustomerController extends Controller
          */
         Customer::create($form_data);
 
-        return redirect('customers/create')->with('success', 'Welcome Aboard Customer');
+        return redirect('/services')->with('success', 'Welcome Aboard Customer, create a ticket of your requirement based on the service and you will be attended to in no time');
     }
 
     /**

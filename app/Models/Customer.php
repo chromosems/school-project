@@ -13,7 +13,6 @@ class Customer extends Model
         'last_name',
         'location',
         'image',
-        'problem_description',
         'service_id',
         'phone_number',
     ];

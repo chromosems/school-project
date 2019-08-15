@@ -18,18 +18,18 @@
         <div class="card-body">
         <div class="col-md-12">
             <br>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-sm-12 text-right">
-                    <a href="{{route('customers.create')}}" class="btn
+                    <a href="{{route('tickets.create')}}" class="btn
                         btn-success
                         text-right "
                        type="button"><i
                             class="fa
                         fa-plus-circle"></i>
-                        Register Complain
+                        Create A ticket
                     </a>
                 </div>
-            </div>
+            </div> -->
             <br>
             <div class="box-body">
                 <table id="example2" class="table table-bordered table-hover">

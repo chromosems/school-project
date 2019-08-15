@@ -8,9 +8,10 @@
 
 
 @section('content')
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"></div>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">{{$techicians->first_name}}</div>
+    <div class="card">
+        <div class="card-header">{{$techicians->first_name}}</div>
         <div class="col-md-12">
             <div class="row">
 
@@ -33,7 +34,7 @@
                                             Name:</b>{{$techicians->last_name}}</h2></div>
                             </center>
                         </div>
-                            <div class="panel-body">
+                            <div class="card-body">
                                 <center>
 
                                     <img src="{{URL::to('/')}}/images/{{$techicians->image}}" class="img-thumbnail"
@@ -65,6 +66,7 @@
             
             </div>
         </div>
+    </div>
     </div>
 @endsection
 

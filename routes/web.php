@@ -13,20 +13,21 @@ Route::resource('/technicians', 'TechicianController');
 Route::get('/services', 'ServiceController@index');
 Route::get('/services/{slug}', 'ServiceController@show');
 
+Route::get('/companies', 'CompanyController@index');
+Route::get('/companies/{id}', 'CompanyController@show');
+
 Route::resource('/tickets', 'TicketController');
 
 Route::post('/comments', 'CommentsController@newComment');
+Route::resource('/compdetails', 'CompdetailsController');
 
 Route::get('sendemail', function () {
     $data = array(
         'name' => "Ticket",
     );
+
     Mail::send('mails.welcome', $data, function ($message) {
         $message->from('opudaemmanuel@gmail.com', 'Ticket');
         $message->to('opudaemmanuel@gmail.com');
     });
-
 });
-
-
-  

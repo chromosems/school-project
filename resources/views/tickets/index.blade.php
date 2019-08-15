@@ -9,18 +9,7 @@
                 <div class="clearfix"></div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-12 text-right">
-                    <a href="{{route('tickets.create')}}" class="btn
-                        btn-success
-                        text-right "
-                       type="button"><i
-                            class="fa
-                        fa-plus-circle"></i>
-                        create ticket
-                    </a>
-                </div>
-            </div>
+            
             <div class="card-body mt-2">
                 @if (session('status'))
                     <div class="alert alert-success">
@@ -34,18 +23,22 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>TITLE</th>
+                            <th>DEPARTMENT</th>
+                            <th>SERVICE</th>
+                            <th>DESCRIPTION</th>
                             <th>STATUS</th>
+                            <th>LAST UPDATE</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($tickets as $ticket)
                             <tr>
-                                <td>{{$ticket->id}}</td>
-                                <td><a href="{{action('TicketController@show', $ticket->slug)}}">{{$ticket->title}}</a>
+                                <td><strong>{{$ticket->department}}</strong></td>
+                                 <td><a href="{{action('TicketController@show', $ticket->slug)}}">{{$ticket->title}}</a> 
                                 </td>
+                                <td>{{$ticket->description}}</td>
                                 <td>{{$ticket->status ?'Pending' :'Answered' }}</td>
+                                <td>{{$ticket->created_at}}</td>
                             </tr>
                         @endforeach
                         </tbody>
