@@ -16,9 +16,10 @@ Route::get('/services/{slug}', 'ServiceController@show');
 Route::get('/companies', 'CompanyController@index');
 Route::get('/companies/{id}', 'CompanyController@show');
 
+Route::post('/tickets/{ticket}/comment', 'TicketController@newComment');
+
 Route::resource('/tickets', 'TicketController');
 
-Route::post('/comments', 'CommentsController@newComment');
 Route::resource('/compdetails', 'CompdetailsController');
 
 Route::get('sendemail', function () {

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Http\Request;
+use Auth;
 use App\Models\Ticket;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Comment;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class TicketController extends Controller
 {
@@ -115,6 +116,19 @@ class TicketController extends Controller
 
         $ticket->save();
         return redirect('/tickets')->with('status', 'The  ticket' .  $ticket->slug  .   'has been updated!');
+    }
+
+    public function newComment(Request $request, Ticket $ticket)
+    {
+        $request->validate([
+            'content'=>'required|min:3',
+        ]);
+
+        $comment = new Comment($request->all());
+        $comment->user_id = Auth::user()->id;
+        $comment->ticket_id = $ticket->id;
+        $comment->save();
+        return redirect()->back()->with('status', 'your comment has been created !');
     }
 
     /**

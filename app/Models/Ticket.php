@@ -20,7 +20,7 @@ class Ticket extends Model
 
     public function user()
     {
-        return $this->BelongsTo(App\Models\User);
+        return $this->belongsTo(User::class);
     }
 
     public function getTitle()
@@ -28,8 +28,8 @@ class Ticket extends Model
         return $this->title;
     }
     
-    public function comments(){
-      return $this->hasMany('App\Models\Comment','post_id');
-   }
-
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

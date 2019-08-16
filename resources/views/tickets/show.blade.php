@@ -34,8 +34,8 @@
                     <p>{{$comment->content}}</p>
                 </div>
                 <div class="col-sm-6">
-                    <p>Replied At <strong>{{$comment->created_at}}</strong></p>
-                    <p>Replied by <strong>{{$comment->user->name  }}</strong></p>
+                    <p>Replied At <strong>{{ $comment->created_at->diffForHumans() }}</strong></p>
+                    <p>Replied by <strong>{{ $comment->user->name }}</strong></p>
 
                 </div>
             </div>
@@ -43,20 +43,19 @@
     </div>
     @endforeach
     <div class="card mt-2">
-        <form method="post" action="/comments">
-
+        <form method="post" action="/tickets/{{$ticket->id}}/comment">
+            @csrf
+        
             @foreach($errors->all() as $error)
-            <p class="alert alert-danger">{{error}}</p>
+                <p class="alert alert-danger">{{error}}</p>
             @endforeach
+            
             @if(session('status'))
-            <div class="alert alert-success">
-                {{session('status')}}
-            </div>
+                <div class="alert alert-success">
+                    {{session('status')}}
+                </div>
             @endif
 
-            @csrf
-
-            <input type="hidden" name="post_id" value="{{$ticket->id}}"></input>
             <fieldset>
                 <legend class="ml-3">Reply</legend>
                 <div class="form-group">

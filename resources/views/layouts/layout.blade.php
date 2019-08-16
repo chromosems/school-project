@@ -80,13 +80,6 @@
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="/customers">
-                        <span data-feather="users"></span>
-                        Customers
-                    </a>
-                  </li>
-
-                  <li class="nav-item">
                     <a class="nav-link" href="/services">
                         <span data-feather="users"></span>
                         services
