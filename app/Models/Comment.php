@@ -15,11 +15,11 @@ class Comment extends Model
         'status'
     ];
     public function user(){
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo(User::class);
     }
 
     public function ticket()
     {
-        return $this->belongsTo('App\Models\Ticket');
+        return $this->hasMany('App\Models\Ticket','post_id');
     }
 }

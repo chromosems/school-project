@@ -56,7 +56,7 @@
 
 
                 <div class="form-group">
-                    <label for="title" class="col-lg-12" control-label>location</label>
+                    <label for="title" class="col-lg-12" control-label>Your location</label>
                     <div class="col-lg-12">
                         <input type="text" class="form-control" id="location" name="location" placeholder="location">
                     </div>
