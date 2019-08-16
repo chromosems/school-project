@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Auth;
 use App\Models\Comment;
+use Illuminate\Http\Request;
 
 class CommentsController extends Controller
 {
@@ -15,6 +16,7 @@ class CommentsController extends Controller
         ]);
 
         $comment = new Comment($request->all());
+        $comment->user_id = Auth::user()->id;
         $comment->save();
         return redirect()->back()->with('status', 'your comment has been created !');
     }

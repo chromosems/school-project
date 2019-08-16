@@ -75,7 +75,7 @@ class TicketController extends Controller
     {
         $ticket = Ticket::whereSlug($slug)->first();
         /**this code display all the comments created */
-        $comments = $ticket->comments()->get();
+        $comments = $ticket->comments()->with('user')->get();
         return view('tickets.show', compact('ticket', 'comments'));
     }
 

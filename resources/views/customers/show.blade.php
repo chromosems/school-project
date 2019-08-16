@@ -55,6 +55,7 @@
                                      <div class="col-sm-6">
                                     <h4><b>location:</b>{{$customer->location}}</h4>
                                     <h4><b>Phone Number: </b>{{$customer->phone_number}}</h4>
+                                    <h4><b>Service: </b>{{$customer->service->name}}</h4>
 
 
                             </div>

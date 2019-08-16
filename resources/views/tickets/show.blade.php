@@ -35,6 +35,8 @@
                 </div>
                 <div class="col-sm-6">
                     <p>Replied At <strong>{{$comment->created_at}}</strong></p>
+                    <p>Replied by <strong>{{$comment->user->name  }}</strong></p>
+
                 </div>
             </div>
         </div>
