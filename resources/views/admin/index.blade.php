@@ -29,7 +29,7 @@
                     <div class="card">
                         <div class="card-header">Sales for Month</div>
                         <div class="card-body">
-                            <h4 class="text-center">5</h4>
+                            <h4 class="text-center">200</h4>
                         </div>
                     </div>
                 </div>

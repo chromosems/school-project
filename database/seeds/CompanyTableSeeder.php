@@ -21,6 +21,7 @@ class CompanyTableSeeder extends Seeder
                 a brief summary of your business to your audiences, such as media, customers, analysts and investors. 
                 It should be functional and updated over time – for example, 
                 when you gain major customers or achieve a target annual revenue.',
+                'offer' => 'electronic sales,brokers',
             ],
             [
                 'name' => 'Ensibuuko  Technologies limited',
@@ -28,7 +29,8 @@ class CompanyTableSeeder extends Seeder
                 'contact' => '078654643',
                 'bio' => 'Having a company bio or company overview is important to give 
                 a brief summary of your business to your audiences, such as media, customers, analysts and investors.
-                 It should be functional and updated over time – for example, when you gain major customers or achieve a target annual revenue.'
+                It should be functional and updated over time – for example, when you gain major customers or achieve a target annual revenue.',
+                'offer' => 'marketing team'
             ],
             [
                 'name' => 'Kibs Systems Limited',
@@ -36,7 +38,8 @@ class CompanyTableSeeder extends Seeder
                 'contact' => '0706355311',
                 'bio' => 'Having a company bio or company overview is important to give a brief summary of your business to your audiences,
                  such as media, customers,
-                 analysts and investors. It should be functional and updated over time – for example, when you gain major customers or achieve a target annual revenue.'
+                 analysts and investors. It should be functional and updated over time – for example, when you gain major customers or achieve a target annual revenue.',
+                 'offer'=> 'electronics & installations'
             ],
             [
                 'name' => 'House U-In Systems Limited',
@@ -44,7 +47,8 @@ class CompanyTableSeeder extends Seeder
                 'contact' => '078355311',
                 'bio' => 'Having a company bio or company overview is important to give a brief summary of your business to your audiences, 
                 such as media, customers, analysts and investors.
-                 It should be functional and updated over time – for example, when you gain major customers or achieve a target annual revenue.'
+                 It should be functional and updated over time – for example, when you gain major customers or achieve a target annual revenue.',
+                 'offer'=>'software development & updates',
             ],
             [
                 'name' => 'Kabus Furniture',
@@ -52,7 +56,8 @@ class CompanyTableSeeder extends Seeder
                 'contact' => '079365726',
                 'bio' => 'Having a company bio or company overview is important to give a brief summary of your business to your audiences, 
                 such as media, customers, analysts and investors.
-                 It should be functional and updated over time – for example, when you gain major customers or achieve a target annual revenue.'
+                 It should be functional and updated over time – for example, when you gain major customers or achieve a target annual revenue.',
+                 'offer'=>'house hold equipments'
             ],
             [
                 'name' => 'Delton security Universe',
@@ -60,7 +65,8 @@ class CompanyTableSeeder extends Seeder
                 'contact' => '076546527',
                 'bio' => 'Having a company bio or company overview is important to give a brief summary of your business to your audiences,
                  such as media, customers, analysts and investors. 
-                It should be functional and updated over time – for example, when you gain major customers or achieve a target annual revenue.'
+                It should be functional and updated over time – for example, when you gain major customers or achieve a target annual revenue.',
+                'offer'=> 'security officers & security officials'
             ],
 
         ];

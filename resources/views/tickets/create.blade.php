@@ -6,6 +6,7 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Ticket</h1>
 </div>
+
 @if ($errors->any())
 <div class="alert alert-danger">
     <ul>
@@ -21,9 +22,7 @@
     {{ session()->get('success') }}
 </div><br />
 @endif
-<!-- <hr>
-    <div class="container col-md-12 col-md-offset-2" xmlns="http://www.w3.org/1999/html"
-         xmlns="http://www.w3.org/1999/html"> -->
+
 <div class="card">
     <div class="card-header">
         <h5 class="float-left">Create a Ticket</h5>
@@ -36,9 +35,14 @@
             @csrf
             <fieldset>
                 <div class="form-group">
-                    <label for="title" class="col-lg-12" control-label>Title</label>
+                    <label for="title" class="col-lg-12" control-label>Service</label>
                     <div class="col-lg-12">
-                        <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                        <select id="service" name="title" class="form-control">
+                            @foreach(App\Http\services\Service::all() as $service)
+                            <option value="{{$service}}">{{$service}}</option>
+                            @endforeach
+
+                        </select>
                     </div>
                 </div>
 
@@ -58,7 +62,11 @@
                 <div class="form-group">
                     <label for="title" class="col-lg-12" control-label>Your location</label>
                     <div class="col-lg-12">
-                        <input type="text" class="form-control" id="location" name="location" placeholder="location">
+                        <select id="location" name="location" class="form-control">
+                            @foreach (App\Http\locations\Location::all() as $country)
+                            <option value="{{ $country}}">{{$country}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
 
@@ -73,7 +81,7 @@
 
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                        <button class="btn btn-default">Cancel</button>
+                        <button type="deny" class="btn btn-default">Cancel</button>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
 
@@ -82,6 +90,5 @@
             </fieldset>
         </form>
     </div>
-</div>
 </div>
 @endsection

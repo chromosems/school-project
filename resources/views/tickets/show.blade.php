@@ -8,10 +8,10 @@
             <h5 class="float-left">{{ $ticket->title }}</h5>
             <div class="clearfix"></div>
         </div>
-
+  
 
         <div class="card-body">
-            <p><strong>status</strong>:{{$ticket->status ? 'Pending' : 'Answered'}}</p>
+            <p><strong>status &nbsp;</strong>: {{$ticket->status ? 'Pending' : 'Answered'}}</p>
             <p>{{$ticket->description}}</p>
             <p><strong>location</strong> : {{$ticket->location}}</p>
             <br>
@@ -25,7 +25,7 @@
         </div>
     </div>
     <br>
-    <h4>Dispaly Comments</h4>
+    <h4>Chats</h4>
     @foreach($comments as $comment)
     <div class="card mt-3">
         <div class="card-body">

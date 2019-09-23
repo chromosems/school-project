@@ -2,12 +2,13 @@
 
 @section('content')
 
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"></div>
+
     <h1 class="h2">Dashboard</h1>
-</div>
+
 
 <div class="card">
-    <div class="card-header card-title">Section title</div>
+    <div class="card-header card-title">KIbs | After sales service system</div>
     <div class="card-body">
        
         <p> Welcome A board, to begin Register as a customer for record purposes <a href="{{route('customers.create')}}">Here

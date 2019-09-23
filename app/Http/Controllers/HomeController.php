@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Ticket;
 use illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::user()->role === 'Admin') {
-            return view('admin.index');
+            return view('tickets.index',['tickets'=>Ticket::all()]);
         } else {
             return view('home');
         }

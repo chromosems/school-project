@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\Input;
 
 Auth::routes();
 
+Route::get('/tickets/tags/{tag}','TagsController@index');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'HomeController@index')->name('home');
 

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use Carbon\Carbon;
 use App\Models\Ticket;
 use App\Models\Comment;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeAgain;
 
 class TicketController extends Controller
 {
@@ -15,10 +16,20 @@ class TicketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
-        $tickets = Ticket::all();
+
+        $tickets = Ticket::latest()
+        ->filter(request(['month','year']))
+        ->get();
+
+
         return view('tickets.index', compact('tickets'));
     }
 
@@ -44,7 +55,7 @@ class TicketController extends Controller
         //
         $request->validate([
             'title' => 'required',
-            'department'=>'required',
+            'department' => 'required',
             'location' => 'required',
             'description' => 'required',
         ]);
@@ -58,12 +69,11 @@ class TicketController extends Controller
         $data = array(
             'ticket' => $slug,
         );
-        Mail::send('mails.tickets', $data, function ($message) {
-            $message->from('emmaopuda@gmail.com', 'Technical Support System');
-
-            $message->to('opudaemmanuel@gmail.com')->subject('A new Ticket has been created by customer  please respond before closure');
+        \Mail::send('emails.welcome', $data, function ($message) {
+            $message->from('customerservice@gmail.com', 'After sales service');
+            $message->to('lambonaka345@gmail.com', 'Kibs|After sale service')->subject('A new Ticket has been created by customer  please respond before closure');
         });
-        return redirect('/tickets')->with('success', 'A new ticket has been created! its unique id is:' . $slug);
+        return redirect('/tickets')->with('success', 'A new ticket has been created! its unique id is:', 'And email received');
     }
 
     /**
@@ -74,7 +84,7 @@ class TicketController extends Controller
      */
     public function show($slug)
     {
-        $ticket = Ticket::whereSlug($slug)->first();
+        $ticket = Ticket::whereSlug($slug)->firstOrFail();
         /**this code display all the comments created */
         $comments = $ticket->comments()->with('user')->get();
         return view('tickets.show', compact('ticket', 'comments'));
@@ -113,15 +123,15 @@ class TicketController extends Controller
         } else {
             $ticket->status = 1;
         }
-
         $ticket->save();
         return redirect('/tickets')->with('status', 'The  ticket' .  $ticket->slug  .   'has been updated!');
     }
 
+
     public function newComment(Request $request, Ticket $ticket)
     {
         $request->validate([
-            'content'=>'required|min:3',
+            'content' => 'required|min:3',
         ]);
 
         $comment = new Comment($request->all());

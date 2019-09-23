@@ -23,6 +23,7 @@
                     <table class="table">
                         <thead>
                         <tr>
+                            <th>ID</th>
                             <th>DEPARTMENT</th>
                             <th>SERVICE</th>
                             <th>DESCRIPTION</th>
@@ -33,11 +34,12 @@
                         <tbody>
                         @foreach($tickets as $ticket)
                             <tr>
+                                <td>{{$ticket->id}}</td>
                                 <td><strong>{{$ticket->department}}</strong></td>
                                  <td><a href="{{action('TicketController@show', $ticket->slug)}}">{{$ticket->title}}</a> 
                                 </td>
                                 <td>{{$ticket->description}}</td>
-                                <td>{{$ticket->status ?'Pending' :'Answered' }}</td>
+                                <td><span style="color:lime">{{$ticket->status ?'Pending' :'Answered' }}</td>
                                 <td>{{$ticket->created_at}}</td>
                             </tr>
                         @endforeach
@@ -45,6 +47,8 @@
                     </table>
                 @endif
             </div>
+                
+
         </div>
 
 @endsection

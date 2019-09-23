@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'opudaemmanuel@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Kibs|After sales Service'),
     ],
 
     /*
@@ -116,7 +116,7 @@ return [
         'theme' => 'default',
 
         'paths' => [
-            resource_path('views/vendor/mail'),
+            resource_path('views/vendor/mail/markdown'),
         ],
     ],
 

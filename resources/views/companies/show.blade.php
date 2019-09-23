@@ -23,5 +23,13 @@
             {{$companies->location}}
         </div>
     </div>
-</div>
+
+    <div class="card mb-2">
+        <div class="card-body">
+        <p><strong>Service</strong></p>
+            {{$companies->offer}}
+        </div>
+    </div>
+
+    
 @endsection

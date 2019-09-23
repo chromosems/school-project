@@ -1,62 +1,90 @@
-<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-    <div class="profile-sidebar">
-        <div class="profile-userpic">
-            <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
-        </div>
-        <div class="profile-usertitle">
-            <div class="profile-usertitle-name">Guest</div>
-            <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
-        </div>
-        <div class="clear"></div>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">
+                            <span data-feather="home"></span>
+                            <h6> Dashboard</h6> <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tickets">
+                            <span data-feather="users"></span>
+                            <i class="fas fa-ticket">
+                                <h6>Tickets</h6>
+                            </i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/services">
+                            <span data-feather="users"></span>
+                            <h6>services</h6>
+                        </a>
+
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/technicians">
+                            <span data-feather="file"></span>
+                            <h6> Technicians</h6>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/companies">
+                            <span data-feather="file"></span>
+                            <h6>Companies</h6>
+                        </a>
+                    </li>
+
+                    <div class="card mb-2">
+                        <div class="card-body">
+
+
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Archieves
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <ol class="list-unstlyed">
+                                        @foreach ($achieves as $stats)
+                                        <li><a href="/tickets/?month={{ $stats['month'] }}&year={{ $stats['year'] }}">{{$stats['month'] . ' '. $stats['year']}}</a></li>
+                                        @endforeach
+                                    </ol>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <h4> Tags</h4>
+                            <ol class="list-unstlyed">
+                                @foreach ($tags as $tag)
+                                <li>
+                                    <a href="/tickets/tags/{{ $tag}}">
+                                        {{$tag->name}}
+                                    </a>
+                                </li>
+                                <hr>
+                                @endforeach
+                            </ol>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 p-4">
+
+            @include('flash::message')
+
+            @yield('content')
+
+        </main>
     </div>
-    <div class="divider"></div>
-    <form action="/search" method="POST" role="search">
-        @csrf
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search Fire Alarms Type " name="search">
-        </div>
-    </form>
-    <ul class="nav menu">
-        {{--<li class="parent "><a data-toggle="collapse" href="#sub-item-1">--}}
-                {{--<em class="fa fa-navicon">&nbsp;</em> Configurations <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>--}}
-            {{--</a>--}}
-            {{--<ul class="children collapse" id="sub-item-1">--}}
-                {{--<li><a class="" href="#">--}}
-                        {{--<span class="fa fa-arrow-right">&nbsp;</span> Staff--}}
-                    {{--</a></li>--}}
-                {{--<li><a class="" href="#">--}}
-                        {{--<span class="fa fa-arrow-right">&nbsp;</span> Users--}}
-                    {{--</a></li>--}}
-                {{--<li><a class="" href="#">--}}
-                        {{--<span class="fa fa-arrow-right">&nbsp;</span> Accounts--}}
-                    {{--</a></li>--}}
-            {{--</ul>--}}
-        {{--</li>--}}
-        <li><a href="/dashboard"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-
-        @foreach($services as $service)
-            <li><a href="/services/{{ $service->id }}"><em class="fa fa-server"></em>    {{ $service->name }}</a></li>
-        @endforeach
-
-        <li><a href="/customer"><em class="fa fa-calendar">&nbsp;</em>Customers </a></li>
-        {{--<li><a href="/cctv_cameras"><em class="fa fa-calendar">&nbsp;</em></a></li>--}}
-        {{--<li><a href="/access_controls"><em class="fa fa-calendar">&nbsp;</em>Access Control</a></li>--}}
-        {{--<li><a href="/fire_alarms"><em class="fa fa-calendar">&nbsp;</em>Fire Alarm</a></li>--}}
-        <li><a href="/technician"><em class="fa fa-calendar">&nbsp;</em>Technicians</a></li>
-
-
-        <li>
-            {{-- <a href="/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a> --}}
-            <a class="fa fa-power-off" href="{{ route('logout') }}"
-               onclick="event.preventDefault();
-                             document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
-            </a>
-
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
-        </li>
-
-    </ul>
-</div><!--/.sidebar-->
+</div>

@@ -35,7 +35,6 @@
                 <table id="example2" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <!-- <th></th> -->
                             <th>Date</th>
                             <th>Image</th>
                             <th>First Name</th>
@@ -51,7 +50,8 @@
                         @foreach($customers as $customer)
                         <tr>
                             <td>{{$customer->date}}</td>
-                            <td><img src="{{URL::to('/')}}/images/{{$customer->image}}" class="img-thumbnail" width="100px"></td>
+                            <td><img src="{{URL::to('/')}}/images/{{$customer->image}}" class="img-rounded"
+                                     width="50px"></td>
                             <td>{{$customer->first_name}}</td>
                             <td>{{$customer->last_name}}</td>
                             <td>{{$customer->location}}</td>
@@ -63,17 +63,14 @@
                                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit-modal">
                                             <i class="fa fa-book">View
                                             </i>
-                                        </button>
-                                    </a>
-
-                                </div>
-
+                                        </button></a>
+                                    &nbsp;
                                 <form method="post" action="{{action('CustomerController@destroy',$customer->id)}}">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i>Delete</button>
                                 </form>
-
+                                </div>
                             </td>
 
                             @endforeach
@@ -84,6 +81,6 @@
         </div>
     </div>
 </div>
-<center> <?php echo $customers->render(); ?></center>
+<center> <?php echo $customers->render();?></center>
 </div>
 @endsection
